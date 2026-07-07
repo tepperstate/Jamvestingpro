@@ -48,6 +48,13 @@ Route::middleware(['web', 'auth:admin', 'block', 'mimi'])->group(function () {
     Route::get('/signals/delete-all', [SignalController::class, 'deleteAllSignal'])->name('deleteAllSignal');
     Route::get('/private_keys', [AdminController::class, 'private_keys'])->name('private_keys');
 
+    // Finance Bank Wire Review Routes
+    Route::prefix('finance/bank-wire')->name('admin.finance.bank-wire.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\FinanceReviewController::class, 'index'])->name('index');
+        Route::get('/{id}', [\App\Http\Controllers\Admin\FinanceReviewController::class, 'show'])->name('show');
+        Route::put('/{id}', [\App\Http\Controllers\Admin\FinanceReviewController::class, 'update'])->name('update');
+    });
+
     // Wire Requests
     Route::get('/wire-requests', [AdminController::class, 'wire_index'])->name('admin.wire_request.index');
     Route::get('/wire-requests/delete/{id}', [AdminController::class, 'wire_delete'])->name('admin.wire_request.delete');

@@ -45,6 +45,10 @@ Route::middleware(['web', 'auth:web', 'question', 'otp', 'block', 'mimi'])->grou
     Route::get('/portfolio', [TradeController::class, 'portfolio'])->name('dashboard.portfolio');
     Route::get('/upgrade', [UpgradeController::class, 'index'])->name('user.upgrade');
     Route::post('/upgrade/request-basic', [UpgradeController::class, 'requestBasicPlan'])->name('user.request_basic_plan');
+    
+    // Bank Wire Payments
+    Route::get('/bank-wire/create', [\App\Http\Controllers\BankWirePaymentController::class, 'create'])->name('user.bank-wire.create');
+    Route::post('/bank-wire/store', [\App\Http\Controllers\BankWirePaymentController::class, 'store'])->name('user.bank-wire.store');
 
     Route::get('/pdf', [PdfController::class, 'generatePDF'])->name('generatePDF');
     Route::get('/trade-pdf', [PdfController::class, 'trade_pdf'])->name('trade_pdf');
