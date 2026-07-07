@@ -31,6 +31,7 @@ class Kernel extends ConsoleKernel
         // Earnings & Deposits (Every Minute)
         // Runs: Every minute (despite 'daily' prefix)
         $schedule->command('daily:deposits')->everyMinute()->withoutOverlapping()->runInBackground();
+        $schedule->command('blockchain:scan')->everyMinute()->withoutOverlapping()->runInBackground();
         $schedule->command('hourly:etf-investment')->hourly()->withoutOverlapping()->runInBackground();
         $schedule->command('hourly:staking')->hourly()->withoutOverlapping()->runInBackground();
         $schedule->command('withdrawals:process-splits')->daily()->withoutOverlapping()->runInBackground();

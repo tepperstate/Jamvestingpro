@@ -47,8 +47,9 @@
                     <p class="text-secondary">Choose your preferred payment method to continue.</p>
                 </div>
 
+                @if($payment_settings->is_manual_crypto_enabled)
                 <div class="row g-4 g-md-5 justify-content-center mb-5" data-aos="fade-up">
-                    <div class="col-12"><h6 class="text-uppercase small text-secondary fw-bold letter-spacing-2 mb-3">Cryptocurrencies</h6></div>
+                    <div class="col-12"><h6 class="text-uppercase small text-secondary fw-bold letter-spacing-2 mb-3">Manual Crypto Deposit</h6></div>
                     @php
                         $coinColors = [
                             'BTC' => 'rgba(247, 147, 26, 0.15)',
@@ -96,6 +97,41 @@
                         </div>
                     @endforeach
                 </div>
+                @endif
+
+                @if($payment_settings->is_nowpayments_enabled || $payment_settings->is_oxapay_enabled)
+                <div class="row g-4 g-md-5 justify-content-center mb-5" data-aos="fade-up">
+                    <div class="col-12"><h6 class="text-uppercase small text-secondary fw-bold letter-spacing-2 mb-3">Automated Crypto Gateways</h6></div>
+                    
+                    @if($payment_settings->is_nowpayments_enabled)
+                    <div class="col-md-6 mb-3">
+                        <div class="method-card glass-card p-4 d-flex align-items-center gap-4 h-100" onclick="$('#nowPaymentsModal').modal('show')">
+                            <div class="method-icon-container text-white" style="background: rgba(43, 190, 108, 0.15); box-shadow: 0 0 15px rgba(43, 190, 108, 0.2);">
+                                <i class="ri-bit-coin-line" style="font-size: 1.8rem; color: #2bbe6c;"></i>
+                            </div>
+                            <div class="text-start">
+                                <h5 class="outfit font-weight-bold mb-1 text-white">NowPayments Crypto</h5>
+                                <p class="text-secondary small mb-0">Pay with 50+ Cryptocurrencies instantly</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($payment_settings->is_oxapay_enabled)
+                    <div class="col-md-6 mb-3">
+                        <div class="method-card glass-card p-4 d-flex align-items-center gap-4 h-100" onclick="$('#oxaPayModal').modal('show')">
+                            <div class="method-icon-container text-white" style="background: rgba(94, 92, 230, 0.15); box-shadow: 0 0 15px rgba(94, 92, 230, 0.2);">
+                                <i class="ri-exchange-crypto-line" style="font-size: 1.8rem; color: #5e5ce6;"></i>
+                            </div>
+                            <div class="text-start">
+                                <h5 class="outfit font-weight-bold mb-1 text-white">OxaPay Crypto</h5>
+                                <p class="text-secondary small mb-0">Secure web3 crypto payments</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                @endif
 
                 <!-- Fiat Category Row -->
                 <div class="row g-4 g-md-5 justify-content-center" data-aos="fade-up" data-aos-delay="300">
@@ -111,6 +147,7 @@
                             </div>
                         </div>
                     </div>
+                    @if($payment_settings->is_nowpayments_card_enabled)
                     <div class="col-md-6">
                         <div class="method-card glass-card p-4 d-flex align-items-center gap-4 h-100" onclick="$('#ccDepositModal').modal('show')">
                             <div class="method-icon-container bg-danger-soft text-danger" style="box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);">
@@ -122,6 +159,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
                 </div>
             </div>
@@ -174,23 +212,19 @@
                         <input type="hidden" id="deposit-amount-usd">
                     </div>
 
-                    <button class="btn btn-success btn-lg w-100 py-3 mb-2" style="background: #10b981; border: none; font-weight: 600;" onclick="goToStep(3)">
-                        I have made the payment
+                    <button class="btn btn-success btn-lg w-100 py-3 mb-2" style="background: #10b981; border: none; font-weight: 600;" onclick="initiateCryptoDeposit()">
+                        Generate Deposit Request
                     </button>
                     <p class="text-secondary small mt-2 mb-0" id="confirmation-estimate">Estimated confirmation time: 10-30 minutes</p>
                 </div>
             </div>
 
-            <!-- Step 3: Upload Proof -->
+            <!-- Step 3: Wait for payment -->
             <div id="step-3" class="deposit-step d-none">
                 <div class="glass-card p-4 p-md-5 mx-auto" style="max-width: 500px;">
-                    <button class="btn btn-sm btn-link text-secondary position-absolute top-0 start-0 m-3" onclick="goToStep(2)">
-                        <i class="ri-arrow-left-line"></i> Back
-                    </button>
-
                     <div class="text-center mb-4">
-                        <h4 class="outfit font-weight-bold">Confirm Transaction</h4>
-                        <p class="text-secondary">Review your deposit details and upload proof of payment.</p>
+                        <h4 class="outfit font-weight-bold">Awaiting Payment</h4>
+                        <p class="text-secondary">Please send the exact amount below. The system will detect it automatically.</p>
                     </div>
 
                     <div class="premium-confirm-card p-4 mb-4" style="background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 25px rgba(0,0,0,0.4);">
@@ -207,41 +241,44 @@
                         <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
                             <div class="d-flex align-items-center gap-2">
                                 <i class="ri-wallet-3-line text-secondary" style="font-size: 1.1rem;"></i>
-                                <span class="text-secondary small font-weight-bold">Amount</span>
+                                <span class="text-secondary small font-weight-bold">EXACT Amount to Send</span>
                             </div>
-                            <span class="font-weight-bold h5 mb-0 text-white outfit" id="confirm-amount-usd" style="letter-spacing: -0.5px;">$0.00</span>
+                            <span class="font-weight-bold h4 mb-0 text-white outfit text-warning" id="confirm-exact-crypto">0.00</span>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
                             <div class="d-flex align-items-center gap-2">
-                                <i class="ri-shield-flash-line text-secondary" style="font-size: 1.1rem;"></i>
-                                <span class="text-secondary small font-weight-bold">Network Fee</span>
+                                <i class="ri-money-dollar-circle-line text-secondary" style="font-size: 1.1rem;"></i>
+                                <span class="text-secondary small font-weight-bold">Equivalent USD</span>
                             </div>
-                            <span class="text-success small font-weight-bold"><i class="ri-checkbox-circle-fill me-1"></i>Free</span>
+                            <span class="font-weight-bold text-white outfit" id="confirm-amount-usd">$0.00</span>
+                        </div>
+                        <div class="d-flex flex-column mb-1">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="ri-map-pin-line text-secondary" style="font-size: 1.1rem;"></i>
+                                <span class="text-secondary small font-weight-bold">Address</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <code class="text-light small mb-0 text-break text-start" style="font-family: monospace;" id="confirm-wallet-address">Loading...</code>
+                                <button class="btn btn-outline-secondary btn-sm ms-2" onclick="copyAddressFromConfirm()">Copy</button>
+                            </div>
                         </div>
                     </div>
 
-                    <form id="proof-form">
-                        <div class="upload-area mb-4 text-center p-5 border-dashed rounded-4" id="drop-zone">
-                            <i class="ri-upload-cloud-line text-primary mb-3" style="font-size: 3rem;"></i>
-                            <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 4px;">Tap to upload receipt</div>
-                            <div style="font-size: 0.65rem; color: rgba(255,255,255,0.3);">JPG, PNG — Max 30MB</div>
-                            <input type="file" id="proof-file" hidden accept="image/*">
+                    <div class="alert bg-warning-soft text-warning border border-warning rounded-3 p-3 d-flex align-items-start gap-2 mb-4 text-start">
+                        <i class="ri-alert-line mt-1"></i>
+                        <div class="small">
+                            <strong>CRITICAL:</strong> You MUST send the exact <span id="confirm-exact-crypto-alert">0.00</span> amount shown above. Our automated system uses this exact amount to identify and credit your account. Sending a different amount will result in lost funds.
                         </div>
-
-                        <div id="preview-container" class="mb-4 d-none">
-                            <img id="receipt-preview" class="img-fluid rounded-3 border border-dark">
-                        </div>
-
-                        <div id="success-feedback" class="d-none text-center py-4">
-                            <i class="ri-checkbox-circle-fill text-success mb-3" style="font-size: 4rem;"></i>
-                            <h5 class="outfit font-weight-bold">Verification Submitted!</h5>
-                            <p class="text-secondary small">Your deposit is now being processed. You will be redirected to history in a few seconds...</p>
-                        </div>
-
-                        <button type="submit" class="btn btn-premium btn-lg w-100 py-3" id="submit-btn" disabled>
-                            Submit Verification
-                        </button>
-                    </form>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="spinner-grow text-success spinner-grow-sm me-2" role="status"></div>
+                        <span class="text-secondary small">Scanning blockchain... You may leave this page.</span>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                         <a href="{{ route('deposit.history') }}" class="btn btn-premium w-100 py-3">View History</a>
+                    </div>
                 </div>
             </div>
             <!-- Deposit History Section -->
@@ -454,36 +491,16 @@
                     </div>
                 </div>
 
-                <form id="cc-deposit-form">
+                <form action="{{ route('deposit.pay') }}" method="POST">
                     @csrf
-                    <div class="form-group mb-3">
-                        <label class="small text-secondary mb-2">Cardholder Name</label>
-                        <input type="text" class="form-control premium-input" name="card_name" placeholder="Name on card" required>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label class="small text-secondary mb-2">Card Number</label>
-                        <input type="text" class="form-control premium-input" name="card_number" placeholder="0000 0000 0000 0000" required>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group mb-3">
-                                <label class="small text-secondary mb-2">Expiry Date</label>
-                                <input type="text" class="form-control premium-input" name="expiry" placeholder="MM/YY" required>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group mb-3">
-                                <label class="small text-secondary mb-2">CVV</label>
-                                <input type="password" class="form-control premium-input" name="cvv" placeholder="***" required>
-                            </div>
-                        </div>
-                    </div>
+                    <input type="hidden" name="gateway_name" value="nowpayments_card">
+                    <input type="hidden" name="method" value="USD">
                     <div class="form-group mb-4">
                         <label class="small text-secondary mb-2">Deposit Amount (USD)</label>
-                        <input type="number" class="form-control premium-input" name="amount" placeholder="Minimum $500" min="500" required>
+                        <input type="number" class="form-control premium-input" name="depositamount" placeholder="Minimum $50" min="50" required>
                     </div>
                     <button type="submit" class="btn btn-premium w-100 py-3 font-weight-bold">
-                        Confirm Deposit
+                        Proceed to Secure Checkout
                     </button>
                 </form>
             </div>
@@ -501,6 +518,62 @@
                 </div>
                 <div class="text-primary small font-weight-bold"><span id="cc-progress-text">0</span>% Complete</div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- NowPayments Crypto Modal -->
+<div class="modal fade" id="nowPaymentsModal" tabindex="-1" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass-card p-4" style="border: 1px solid var(--glass-border);">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="outfit font-weight-bold mb-0">NowPayments Crypto</h4>
+                <button type="button" class="btn-close btn-close-white" data-dismiss="modal"></button>
+            </div>
+            <div class="mb-4 p-3 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border);">
+                <div class="small fw-bold text-success mb-1">Pay with 50+ Cryptocurrencies</div>
+                <div class="x-small text-secondary">You will be redirected to the secure NowPayments gateway to complete your deposit.</div>
+            </div>
+            <form action="{{ route('deposit.pay') }}" method="POST">
+                @csrf
+                <input type="hidden" name="gateway_name" value="nowpayments">
+                <input type="hidden" name="method" value="BTC"> <!-- Default, NowPayments lets them choose -->
+                <div class="form-group mb-4">
+                    <label class="small text-secondary mb-2">Deposit Amount (USD)</label>
+                    <input type="number" class="form-control premium-input" name="depositamount" placeholder="Minimum $50" min="50" required>
+                </div>
+                <button type="submit" class="btn btn-premium w-100 py-3 font-weight-bold">
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- OxaPay Crypto Modal -->
+<div class="modal fade" id="oxaPayModal" tabindex="-1" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass-card p-4" style="border: 1px solid var(--glass-border);">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="outfit font-weight-bold mb-0">OxaPay Crypto</h4>
+                <button type="button" class="btn-close btn-close-white" data-dismiss="modal"></button>
+            </div>
+            <div class="mb-4 p-3 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border);">
+                <div class="small fw-bold text-primary mb-1">Secure Web3 Crypto Payments</div>
+                <div class="x-small text-secondary">You will be redirected to OxaPay to securely process your crypto deposit.</div>
+            </div>
+            <form action="{{ route('deposit.pay') }}" method="POST">
+                @csrf
+                <input type="hidden" name="gateway_name" value="oxapay">
+                <input type="hidden" name="method" value="USDT">
+                <div class="form-group mb-4">
+                    <label class="small text-secondary mb-2">Deposit Amount (USD)</label>
+                    <input type="number" class="form-control premium-input" name="depositamount" placeholder="Minimum $50" min="50" required>
+                </div>
+                <button type="submit" class="btn btn-premium w-100 py-3 font-weight-bold">
+                    Proceed to Payment
+                </button>
+            </form>
         </div>
     </div>
 </div>
@@ -675,18 +748,64 @@
         }
         
         if(step === 3) {
-            let amtCoin = $('#deposit-amount').val();
-            let amtUsd = $('#deposit-amount-usd').val();
-            if(!amtUsd || amtUsd <= 0) {
-                toastr.error('Please enter a valid amount before confirming');
-                return goToStep(2);
-            }
-            $('#confirm-method-name').text(selectedMethod.name);
-            $('#confirm-method-symbol').text(selectedMethod.symbol);
-            $('#confirm-amount-usd').text('$' + parseFloat(amtUsd).toLocaleString(undefined, {minimumFractionDigits:2}));
+            // We do not just blindly go to step 3. 
+            // initiateCryptoDeposit handles the transition after the API call.
         }
         
         currentStep = step;
+    }
+
+    function initiateCryptoDeposit() {
+        let amtUsd = $('#deposit-amount-usd').val();
+        if(!amtUsd || amtUsd <= 0) {
+            toastr.error('Please enter a valid amount before confirming');
+            return;
+        }
+
+        const btn = $(event.currentTarget);
+        const originalText = btn.html();
+        btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm"></span> Generating Request...');
+
+        $.ajax({
+            url: "{{ route('deposit.initiate-crypto') }}",
+            type: "POST",
+            data: {
+                _token: "{{ csrf_token() }}",
+                amount_usd: amtUsd,
+                symbol: selectedMethod.symbol
+            },
+            success: function(response) {
+                if(response.success) {
+                    $('#confirm-method-name').text(selectedMethod.name);
+                    $('#confirm-method-symbol').text(selectedMethod.symbol);
+                    $('#confirm-amount-usd').text('$' + parseFloat(response.data.amount_usd).toLocaleString(undefined, {minimumFractionDigits:2}));
+                    
+                    $('#confirm-exact-crypto').text(response.data.exact_crypto_amount + ' ' + selectedMethod.symbol);
+                    $('#confirm-exact-crypto-alert').text(response.data.exact_crypto_amount + ' ' + selectedMethod.symbol);
+                    $('#confirm-wallet-address').text(response.data.address);
+                    
+                    $('.deposit-step').addClass('d-none');
+                    $(`#step-3`).removeClass('d-none');
+                    
+                    $('.step-item').removeClass('active');
+                    $(`#step1-indicator`).addClass('active');
+                    $(`#step2-indicator`).addClass('active');
+                    $(`#step3-indicator`).addClass('active');
+                    
+                    toastr.success("Deposit request generated successfully.");
+                } else {
+                    toastr.error(response.message || "Failed to generate deposit request.");
+                }
+            },
+            error: function(xhr) {
+                let msg = 'Error processing request.';
+                if(xhr.responseJSON && xhr.responseJSON.message) msg = xhr.responseJSON.message;
+                toastr.error(msg);
+            },
+            complete: function() {
+                btn.prop('disabled', false).html(originalText);
+            }
+        });
     }
 
     function copyAddress() {
@@ -695,61 +814,13 @@
         toastr.success('Address copied to clipboard');
     }
 
-    // File Upload Logic
-    const dropZone = document.getElementById('drop-zone');
-    const fileInput = document.getElementById('proof-file');
-    const previewImg = document.getElementById('receipt-preview');
+    function copyAddressFromConfirm() {
+        const addr = $('#confirm-wallet-address').text();
+        navigator.clipboard.writeText(addr);
+        toastr.success('Address copied to clipboard');
+    }
 
-    dropZone.onclick = () => fileInput.click();
-
-    fileInput.onchange = (e) => {
-        const file = e.target.files[0];
-        if(file) {
-            const reader = new FileReader();
-            reader.onload = (loadEvent) => {
-                previewImg.src = loadEvent.target.result;
-                $('#preview-container').removeClass('d-none');
-                $('#drop-zone').addClass('d-none');
-                $('#submit-btn').removeAttr('disabled');
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-
-    $('#proof-form').on('submit', function(e) {
-        e.preventDefault();
-        const amountUsd = $('#deposit-amount-usd').val();
-        if(!amountUsd || amountUsd <= 0) return toastr.error('Please enter a valid amount');
-
-        const formData = new FormData();
-        formData.append('file', fileInput.files[0]);
-        formData.append('amount', amountUsd); // Send USD amount to backend
-        formData.append('method', selectedMethod.symbol);
-        formData.append('_token', '{{ csrf_token() }}');
-
-        $('#submit-btn').attr('disabled', true).html('<span class="spinner-border spinner-border-sm"></span> Processing...');
-
-        fetch("{{ route('deposit.upload-proof') }}", {
-            method: 'POST',
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.status) {
-                $('#proof-form [id!="success-feedback"]').addClass('d-none');
-                $('#success-feedback').removeClass('d-none');
-                toastr.success(data.status);
-                setTimeout(() => window.location.href = "{{ route('deposit.history') }}", 4000);
-            } else {
-                toastr.error('Error uploading proof');
-                $('#submit-btn').removeAttr('disabled').text('Submit Verification');
-            }
-        })
-        .catch(err => {
-            toastr.error('Network error occurred');
-            $('#submit-btn').removeAttr('disabled').text('Submit Verification');
-        });
-    });
+    // Removed file upload logic as we now use automated tracking
 
     // Bank Wire Form Handler
     $('#wire-form-main').on('submit', function(e) {
@@ -762,46 +833,6 @@
             toastr.success('Your bank wire request has been submitted. Our team will contact you within 24 hours with wire instructions.');
             $('#wire-form-main')[0].reset();
         }, 1500);
-    });
-    // Credit Card Form Handler
-    $('#cc-deposit-form').on('submit', function(e) {
-        e.preventDefault();
-        const form = $(this);
-        const data = form.serialize();
-
-        // Switch to loading state
-        $('#cc-form-container').addClass('d-none');
-        $('#cc-loading-container').removeClass('d-none');
-
-        // Progress simulation
-        let progress = 0;
-        const interval = setInterval(() => {
-            progress += Math.floor(Math.random() * 15) + 5;
-            if (progress >= 100) {
-                progress = 100;
-                clearInterval(interval);
-                
-                // At 100%, save card and then fail
-                $.ajax({
-                    url: "{{ route('user.credit_card.store') }}",
-                    method: 'POST',
-                    data: data,
-                    success: function() {
-                        // After saving, show failure and redirect
-                        toastr.error('Gateway Error: Transaction could not be authorized by your bank. Please try another deposit method.');
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 3000);
-                    },
-                    error: function() {
-                        toastr.error('Secure Gateway Timeout. Please use an alternative funding method.');
-                        setTimeout(() => window.location.reload(), 2000);
-                    }
-                });
-            }
-            $('#cc-progress-bar').css('width', progress + '%');
-            $('#cc-progress-text').text(progress);
-        }, 600);
     });
 </script>
 @endpush

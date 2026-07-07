@@ -14,8 +14,9 @@ class NowPaymentsCardService implements PaymentGatewayInterface
 
     public function __construct()
     {
-        $this->apiKey = env('NOWPAYMENTS_API_KEY', '');
-        $this->ipnSecret = env('NOWPAYMENTS_IPN_SECRET', '');
+        $settings = \Illuminate\Support\Facades\DB::table('payment__settings')->first();
+        $this->apiKey = $settings->nowpayments_api_key ?? env('NOWPAYMENTS_API_KEY', '');
+        $this->ipnSecret = $settings->nowpayments_ipn_secret ?? env('NOWPAYMENTS_IPN_SECRET', '');
     }
 
     public function generatePaymentUrl(float $amount, string $currency, string $cryptoCurrency, string $txnId): string

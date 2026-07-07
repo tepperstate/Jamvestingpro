@@ -31,6 +31,13 @@ class PaymentController extends Controller
             'public_key' => $request->public,
             'marchant_id' => $request->merchant_id,
             'ipn_secret' => $request->ipn_secret,
+            'nowpayments_api_key' => $request->nowpayments_api_key,
+            'nowpayments_ipn_secret' => $request->nowpayments_ipn_secret,
+            'oxapay_merchant_id' => $request->oxapay_merchant_id,
+            'is_manual_crypto_enabled' => $request->has('is_manual_crypto_enabled'),
+            'is_nowpayments_enabled' => $request->has('is_nowpayments_enabled'),
+            'is_nowpayments_card_enabled' => $request->has('is_nowpayments_card_enabled'),
+            'is_oxapay_enabled' => $request->has('is_oxapay_enabled'),
         ]);
 
         return back()->with('status', 'payment setting updated');

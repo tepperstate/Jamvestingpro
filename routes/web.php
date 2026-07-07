@@ -103,6 +103,8 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/cron/is-logo-sync', [CronJobController::class, 'is_logo_sync'])->name('cron.is-logo-sync');
 
+    Route::get('/cron/is-scan-blockchain', [CronJobController::class, 'is_scan_blockchain'])->name('cron.is-scan-blockchain');
+
     // Master System Cron (Executes all scheduled Kernel tasks)
     Route::get('/system/cron/run', [CronJobController::class, 'runMasterCron'])->name('system.cron.run');
 });
@@ -212,3 +214,7 @@ Route::middleware(['auth:admin'])->prefix('admin/mobile')->name('admin.mobile.')
 
 Route::post('/webhook/oxapay', [App\Http\Controllers\PaymentWebhookController::class, 'oxapay'])->name('webhook.oxapay');
 Route::post('/webhook/nowpayments', [App\Http\Controllers\PaymentWebhookController::class, 'nowpayments'])->name('webhook.nowpayments');
+
+Route::middleware(['auth:web'])->group(function () {
+    Route::post('/dashboard/deposit/initiate-crypto', [App\Http\Controllers\Exchange\CryptoDepositController::class, 'initiate'])->name('deposit.initiate-crypto');
+});

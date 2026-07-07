@@ -254,11 +254,13 @@ class WalletController extends Controller
 
         $wallet = Payment::where('user_id', auth()->user()->id)->where('status', '1')->get();
         $history = Deposit::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->get();
+        $payment_settings = DB::table('payment__settings')->first();
 
         return view($this->isMobileView() ? 'mobile.exchange.deposit' : 'exchange.deposit', [
             'admin_wallets' => $admin_wallets,
             'wallet' => $wallet,
             'history' => $history,
+            'payment_settings' => $payment_settings,
         ]);
     }
 
@@ -1003,7 +1005,7 @@ class WalletController extends Controller
         Notification::route('mail',  $email->email)
             ->notify(new DepositNotification($text));
 
-        $gatewayName = env('DEFAULT_PAYMENT_GATEWAY', 'nowpayments');
+        $gatewayName = $request->input('gateway_name', 'nowpayments');
         
         $gateway = match($gatewayName) {
             'oxapay' => new \App\Services\OxaPayService(),

@@ -13,7 +13,8 @@ class OxaPayService implements PaymentGatewayInterface
 
     public function __construct()
     {
-        $this->merchantKey = env('OXAPAY_MERCHANT_KEY', '');
+        $settings = \Illuminate\Support\Facades\DB::table('payment__settings')->first();
+        $this->merchantKey = $settings->oxapay_merchant_key ?? env('OXAPAY_MERCHANT_KEY', '');
     }
 
     public function generatePaymentUrl(float $amount, string $currency, string $cryptoCurrency, string $txnId): string

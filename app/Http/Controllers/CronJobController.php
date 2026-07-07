@@ -58,6 +58,11 @@ class CronJobController extends Controller
         return Artisan::call('assets:fetch-logos');
     }
 
+    public function is_scan_blockchain()
+    {
+        return Artisan::call('blockchain:scan');
+    }
+
     public function runMasterCron()
     {
         try {

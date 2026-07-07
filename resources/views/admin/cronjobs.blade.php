@@ -83,6 +83,31 @@
                             </button>
                         </div>
                     </div>
+
+                    <div class="p-4 bg-glass-dark border-top border-bottom border-glass mt-4">
+                        <h5 class="text-white mb-0 font-weight-bold">Autonomous Blockchain Scanner Cronjob</h5>
+                        <p class="text-muted small mb-0">Use this if you ONLY want to trigger the manual crypto deposit scanner independently from the Master Cron.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-4">
+                            <h6 class="font-weight-bold text-white mb-2">Web Cron (For 3rd-Party Cron Services like cron-job.org)</h6>
+                            <div class="input-group">
+                                <input type="text" class="form-control glass-panel border-0 text-muted small py-3" readonly value="wget -q -O /dev/null {{ route('cron.is-scan-blockchain') }}" id="cron_blockchain_web">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary px-4" onclick="copyToClipboard('cron_blockchain_web')">
+                                        <i data-lucide="copy" class="mr-2" style="width:16px;"></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <small class="text-muted d-block mt-2">Recommended frequency: Every 2-5 Minutes</small>
+                        </div>
+
+                        <div class="text-right mt-4 pt-3 border-top border-glass-light">
+                            <button class="btn btn-success px-4 py-2 rounded-pill font-weight-bold" onclick="runCron('{{ route('cron.is-scan-blockchain') }}', this)">
+                                <i data-lucide="play" class="mr-2" style="width:16px; display:inline-block;"></i> TEST SCANNER NOW
+                            </button>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
