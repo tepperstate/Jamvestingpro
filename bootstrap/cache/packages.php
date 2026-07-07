@@ -51,17 +51,6 @@
       0 => 'Enlightn\\Enlightn\\EnlightnServiceProvider',
     ),
   ),
-  'hexters/coinpayment' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Hexters\\CoinPayment\\Providers\\CoinPaymentServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'CoinPayment' => 'Hexters\\CoinPayment\\CoinPayment',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 

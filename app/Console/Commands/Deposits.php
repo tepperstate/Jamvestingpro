@@ -46,7 +46,6 @@ class Deposits extends Command
 
         $email = DB::table('admin_email')->where('id', 1)->first();
 
-        // $data = DB::table('coinpayment_transactions')->where("status","0")->orderBy('id','desc')->get();
         $data = Deposit::where(['status' => 'waiting'])->get();
 
         if ($data) {

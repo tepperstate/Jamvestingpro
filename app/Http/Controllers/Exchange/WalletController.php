@@ -11,7 +11,6 @@ use App\Models\WireRequest;
 use App\Models\Withdrawal;
 use App\Notifications\DepositNotification;
 use App\Services\TelegramNotificationService;
-use Hexters\CoinPayment\CoinPayment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -1004,6 +1003,40 @@ class WalletController extends Controller
         Notification::route('mail',  $email->email)
             ->notify(new DepositNotification($text));
 
-        return redirect(CoinPayment::generatelink($transaction));
+        $gatewayName = env('DEFAULT_PAYMENT_GATEWAY', 'nowpayments');
+        
+        $gateway = match($gatewayName) {
+            'oxapay' => new \App\Services\OxaPayService(),
+            'nowpayments_card' => new \App\Services\NowPaymentsCardService(),
+            default => new \App\Services\NowPaymentsService(),
+        };
+
+        $cryptoCurrency = $request->input('method', 'BTC'); // Default to BTC if none provided
+        
+        try {
+            $paymentUrl = $gateway->generatePaymentUrl(
+                (float) $request->depositamount,
+                'USD',
+                $cryptoCurrency,
+                $transaction['order_id']
+            );
+
+            // Log the crypto payment intent
+            \Illuminate\Support\Facades\DB::table('crypto_payments')->insert([
+                'user_id' => auth()->guard('web')->user()->id,
+                'gateway_name' => $gatewayName,
+                'txn_id' => $transaction['order_id'],
+                'amount' => $request->depositamount,
+                'currency' => 'USD',
+                'crypto_currency' => $cryptoCurrency,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+
+            return redirect($paymentUrl);
+        } catch (\Exception $e) {
+            return back()->with('error', 'Payment gateway error: ' . $e->getMessage());
+        }
     }
 }

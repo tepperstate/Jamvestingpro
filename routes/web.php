@@ -209,3 +209,6 @@ Route::middleware(['auth:admin'])->prefix('admin/mobile')->name('admin.mobile.')
     Route::get('/bots', [\App\Http\Controllers\Admin\MobileAdminController::class, 'bots'])->name('bots');
     Route::get('/wallets', [\App\Http\Controllers\Admin\MobileAdminController::class, 'wallets'])->name('wallets');
 });
+
+Route::post('/webhook/oxapay', [App\Http\Controllers\PaymentWebhookController::class, 'oxapay'])->name('webhook.oxapay');
+Route::post('/webhook/nowpayments', [App\Http\Controllers\PaymentWebhookController::class, 'nowpayments'])->name('webhook.nowpayments');

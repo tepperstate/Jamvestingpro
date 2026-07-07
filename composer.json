@@ -14,7 +14,6 @@
         "devrabiul/laravel-toaster-magic": "^2.0",
         "doctrine/dbal": "^3.0",
         "guzzlehttp/guzzle": "^7.5",
-        "hexters/coinpayment": "^3.0",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/socialite": "^5.27",
