@@ -1,0 +1,409 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TisasNg - Boost Sales, Reward Customers, and Grow Your Business</title>
+    <!-- Tailwind CSS via CDN (for development) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="icon" href="assets/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Remove the fixed width container -->
+    <div class="w-full">
+        <div class="bg-[#f1f1f1] w-full">
+            <div class="flex flex-col w-full">
+                <nav class="bg-[rgba(17,17,17,0.90)] w-full">
+                    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex items-center justify-between h-24">
+                            <!-- Logo -->
+                            <div class="flex-shrink-0">
+                                <a href="index.html"><img src="assets/logo.png" class="h-14 w-auto" alt="Logo"></a>
+                            </div>
+
+                            <!-- Desktop Menu -->
+                            <div class="hidden md:block">
+                                <div class="ml-10 flex items-baseline space-x-8">
+                                    <a href="about.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">About Us</a>
+                                    <a href="business.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">Businesses</a>
+                                    <a href="customers.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">Customers</a>
+                                    <a href="contact.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">Contact
+                                        Us</a>
+                                </div>
+                            </div>
+
+                            <!-- Desktop Buttons -->
+                            <div class="hidden md:block">
+                                <div class="flex items-center space-x-4">
+                                    <a href="login.html"
+                                        class="bg-transparent text-white font-medium px-4 py-2 rounded hover:bg-white/10 transition duration-300">
+                                        Login
+                                    </a>
+                                    <a href="signup.html"
+                                        class="bg-[#b78d3f] text-white font-medium px-6 py-2 rounded-2xl hover:bg-[#a67d36] transition duration-300">
+                                        Sign Up
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Menu Button -->
+                            <div class="-mr-2 flex md:hidden">
+                                <button type="button" id="mobile-menu-button"
+                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu (Hidden by Default) -->
+                    <div class="md:hidden hidden" id="mobile-menu">
+                        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <a href="about.html"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">About
+                                Us</a>
+                            <a href="business.html#"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Businesses</a>
+                            <a href="customers.html#"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Customers</a>
+                            <a href="contact.html"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Contact
+                                Us</a>
+                        </div>
+                        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <a href="login.html"
+                                class="block w-full text-left text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">
+                                Login
+                            </a>
+                            <a href="signup.html"
+                                class="block w-full text-left bg-[#b78d3f] text-white px-3 py-2 rounded-md text-base font-medium">
+                                Sign Up
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <!-- Contact Section -->
+                <div class="bg-neutral-50">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                        <div class="[background:rgba(0,0,0,0.20)] box-border grow-0 shrink-0 basis-auto rounded-[20px]">
+                            <img src="assets/contact1.png" alt="Contact Us" class="w-full h-auto object-cover " />
+                        </div>
+                        <!-- Contact Information and Form -->
+                        <div class="flex flex-col lg:flex-row gap-8 mt-4">
+                            <!-- Left Column (Contact Information) -->
+                            <div class="bg-[#1977f3] p-6 rounded-2xl lg:w-[397px]">
+                                <h1 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-white mb-6">
+                                    Contact Information
+                                </h1>
+
+                                <!-- Contact Details -->
+                                <div class="space-y-6">
+                                    <!-- Email -->
+                                    <div class="flex items-center gap-2">
+                                        <svg width="50" height="51" viewBox="0 0 50 51" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Email Icon SVG -->
+                                            <g filter="url(#filter0_d_642_30050)">
+                                                <circle cx="25" cy="25" r="20" fill="#EEEEEE" />
+                                                <path
+                                                    d="M18 29.7695V16.7695H35V29.7695H18ZM26.5 24.4865L19 18.9425V28.7675H34V18.9435L26.5 24.4865ZM26.5 23.3105L34 17.7695H19L26.5 23.3105ZM15 32.7695V21.6535H16V31.7685H31.385V32.7685L15 32.7695Z"
+                                                    fill="#111111" />
+                                            </g>
+                                        </svg>
+                                        <p class="font-['Outfit'] text-sm font-medium text-white">
+                                            loremipsum@example.com
+                                        </p>
+                                    </div>
+
+                                    <!-- Phone -->
+                                    <div class="flex items-center gap-2">
+                                        <svg width="50" height="51" viewBox="0 0 50 51" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Phone Icon SVG -->
+                                            <g filter="url(#filter0_d_642_30051)">
+                                                <circle cx="25" cy="25" r="20" fill="#EEEEEE" />
+                                                <path
+                                                    d="M31.4245 26.9695L33.7825 27.913C33.8467 27.9386 33.9018 27.9828 33.9406 28.0401C33.9794 28.0973 34.0001 28.1649 34 28.234V34.474C34 34.5472 33.9709 34.6174 33.9192 34.6692C33.8674 34.7209 33.7972 34.75 33.724 34.75C23.935 34.75 16 26.815 16 17.026V16.288C16 16.129 16.129 16 16.288 16H21.766C21.907 16 22.0345 16.087 22.087 16.2175L23.0305 18.5755C23.17 18.9242 23.2041 19.3062 23.1286 19.6742C23.0532 20.0421 22.8715 20.3798 22.606 20.6455C21.856 21.3925 21.856 22.6075 22.606 23.356L26.644 27.394C27.394 28.144 28.6075 28.144 29.356 27.394C29.6216 27.1288 29.959 26.9473 30.3267 26.8719C30.6943 26.7964 31.076 26.8304 31.4245 26.9695Z"
+                                                    stroke="#111111" stroke-width="1.5" />
+                                            </g>
+                                        </svg>
+                                        <p class="font-['Outfit'] text-sm font-medium text-white">
+                                            +123 456 7890
+                                        </p>
+                                    </div>
+
+                                    <!-- Address -->
+                                    <div class="flex items-center gap-2">
+                                        <svg width="50" height="51" viewBox="0 0 50 51" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Address Icon SVG -->
+                                            <g filter="url(#filter0_d_642_30058)">
+                                                <circle cx="25" cy="25" r="20" fill="#EEEEEE" />
+                                                <path
+                                                    d="M31.75 22.75C31.75 20.9598 31.0388 19.2429 29.773 17.977C28.5071 16.7112 26.7902 16 25 16C23.2098 16 21.4929 16.7112 20.227 17.977C18.9612 19.2429 18.25 20.9598 18.25 22.75C18.25 25.519 20.4655 29.128 25 33.451C29.5345 29.128 31.75 25.519 31.75 22.75ZM25 35.5C19.4995 30.5005 16.75 26.2495 16.75 22.75C16.75 20.562 17.6192 18.4635 19.1664 16.9164C20.7135 15.3692 22.812 14.5 25 14.5C27.188 14.5 29.2865 15.3692 30.8336 16.9164C32.3808 18.4635 33.25 20.562 33.25 22.75C33.25 26.2495 30.5005 30.5005 25 35.5Z"
+                                                    fill="#111111" />
+                                                <path
+                                                    d="M25 25C25.5967 25 26.169 24.7629 26.591 24.341C27.0129 23.919 27.25 23.3467 27.25 22.75C27.25 22.1533 27.0129 21.581 26.591 21.159C26.169 20.7371 25.5967 20.5 25 20.5C24.4033 20.5 23.831 20.7371 23.409 21.159C22.9871 21.581 22.75 22.1533 22.75 22.75C22.75 23.3467 22.9871 23.919 23.409 24.341C23.831 24.7629 24.4033 25 25 25ZM25 26.5C24.0054 26.5 23.0516 26.1049 22.3483 25.4017C21.6451 24.6984 21.25 23.7446 21.25 22.75C21.25 21.7554 21.6451 20.8016 22.3483 20.0983C23.0516 19.3951 24.0054 19 25 19C25.9946 19 26.9484 19.3951 27.6517 20.0983C28.3549 20.8016 28.75 21.7554 28.75 22.75C28.75 23.7446 28.3549 24.6984 27.6517 25.4017C26.9484 26.1049 25.9946 26.5 25 26.5Z"
+                                                    fill="#111111" />
+                                            </g>
+                                        </svg>
+                                        <p class="font-['Outfit'] text-sm font-medium text-white">
+                                            123 Main Street, City, Country
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Social Media Links -->
+                                <div class="flex gap-6 mt-6">
+                                    <a href="#" class="text-white">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Instagram Icon SVG -->
+                                            <path
+                                                d="M10.0001 6.87531C8.2798 6.87531 6.87589 8.27921 6.87589 9.99953C6.87589 11.7198 8.2798 13.1237 10.0001 13.1237C11.7204 13.1237 13.1243 11.7198 13.1243 9.99953C13.1243 8.27921 11.7204 6.87531 10.0001 6.87531ZM19.3704 9.99953C19.3704 8.70578 19.3821 7.42374 19.3095 6.13234C19.2368 4.63234 18.8946 3.30109 17.7978 2.20421C16.6985 1.10499 15.3696 0.76515 13.8696 0.692494C12.5759 0.619838 11.2939 0.631557 10.0025 0.631557C8.7087 0.631557 7.42667 0.619838 6.13527 0.692494C4.63527 0.76515 3.30402 1.10734 2.20714 2.20421C1.10792 3.30343 0.76808 4.63234 0.695424 6.13234C0.622767 7.42609 0.634486 8.70812 0.634486 9.99953C0.634486 11.2909 0.622767 12.5753 0.695424 13.8667C0.76808 15.3667 1.11027 16.698 2.20714 17.7948C3.30636 18.8941 4.63527 19.2339 6.13527 19.3066C7.42902 19.3792 8.71105 19.3675 10.0025 19.3675C11.2962 19.3675 12.5782 19.3792 13.8696 19.3066C15.3696 19.2339 16.7009 18.8917 17.7978 17.7948C18.897 16.6956 19.2368 15.3667 19.3095 13.8667C19.3845 12.5753 19.3704 11.2933 19.3704 9.99953ZM10.0001 14.8066C7.33995 14.8066 5.19308 12.6597 5.19308 9.99953C5.19308 7.33937 7.33995 5.19249 10.0001 5.19249C12.6603 5.19249 14.8071 7.33937 14.8071 9.99953C14.8071 12.6597 12.6603 14.8066 10.0001 14.8066ZM15.004 6.11827C14.3829 6.11827 13.8814 5.61671 13.8814 4.99562C13.8814 4.37453 14.3829 3.87296 15.004 3.87296C15.6251 3.87296 16.1267 4.37453 16.1267 4.99562C16.1269 5.1431 16.0979 5.28917 16.0416 5.42546C15.9852 5.56175 15.9026 5.68558 15.7983 5.78987C15.694 5.89415 15.5701 5.97684 15.4339 6.0332C15.2976 6.08955 15.1515 6.11846 15.004 6.11827Z"
+                                                fill="white" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-white">
+                                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Twitter Icon SVG -->
+                                            <path
+                                                d="M17.2048 0.25H20.5128L13.2858 8.51L21.7878 19.75H15.1298L9.91584 12.933L3.94984 19.75H0.639844L8.36984 10.915L0.214844 0.25H7.03984L11.7528 6.481L17.2028 0.25H17.2048ZM16.0438 17.77H17.8768L6.04484 2.126H4.07784L16.0438 17.77Z"
+                                                fill="white" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-white">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- LinkedIn Icon SVG -->
+                                            <path
+                                                d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5562 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2937 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516Z"
+                                                fill="white" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-white">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <!-- Facebook Icon SVG -->
+                                            <path
+                                                d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z"
+                                                fill="white" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right Column (Contact Form) -->
+                            <div class="bg-white shadow-lg p-6 rounded-2xl flex-1">
+                                <h2
+                                    class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#111111] mb-4 wow animate__fadeInUp">
+                                    Send Message
+                                </h2>
+                                <p class="font-['Outfit'] text-sm font-light text-[#111111] mb-6">
+                                    We&apos;re here to answer your questions
+                                </p>
+
+                                <!-- Contact Form -->
+                                <form class="space-y-6">
+                                    <!-- Full Name -->
+                                    <div>
+                                        <label for="full-name"
+                                            class="font-['Outfit'] text-base font-medium text-[#ff3131]">
+                                            Full Name <span class="text-[#ff3131]">*</span>
+                                        </label>
+                                        <input id="full-name" type="text" placeholder="Enter name"
+                                            class="w-full h-[52px] border border-[#d2d2d2] rounded-[10px] px-4 mt-2" />
+                                    </div>
+
+                                    <!-- Email and Phone -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <!-- Email -->
+                                        <div>
+                                            <label for="email"
+                                                class="font-['Outfit'] text-base font-medium text-[#ff3131]">
+                                                Email Address <span class="text-[#ff3131]">*</span>
+                                            </label>
+                                            <input id="email" type="email" placeholder="Enter email address"
+                                                class="w-full h-[52px] border border-[#d2d2d2] rounded-[10px] px-4 mt-2" />
+                                        </div>
+
+                                        <!-- Phone -->
+                                        <div>
+                                            <label for="phone"
+                                                class="font-['Outfit'] text-base font-medium text-[#ff3131]">
+                                                Phone Number <span class="text-[#ff3131]">*</span>
+                                            </label>
+                                            <input id="phone" type="text" placeholder="Enter your location"
+                                                class="w-full h-[52px] border border-[#d2d2d2] rounded-[10px] px-4 mt-2" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Subject -->
+                                    <div>
+                                        <label for="subject"
+                                            class="font-['Outfit'] text-base font-medium text-[#ff3131]">
+                                            Subject <span class="text-[#ff3131]">*</span>
+                                        </label>
+                                        <input id="subject" type="text" placeholder="Enter subject"
+                                            class="w-full h-[52px] border border-[#d2d2d2] rounded-[10px] px-4 mt-2" />
+                                    </div>
+
+                                    <!-- Description -->
+                                    <div>
+                                        <label for="description"
+                                            class="font-['Outfit'] text-base font-medium text-[#ff3131]">
+                                            Description <span class="text-[#ff3131]">*</span>
+                                        </label>
+                                        <textarea id="description" placeholder="Message"
+                                            class="w-full h-[222px] border border-[#d2d2d2] rounded-[10px] px-4 py-3 mt-2"></textarea>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit"
+                                        class="bg-[#b78d3f] font-['Outfit'] text-base font-semibold text-white w-full md:w-[270px] h-[66px] rounded-2xl">
+                                        SUBMIT
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- footer -->
+                <footer class="bg-[#1e1e1e] w-full py-16">
+                    <div class="max-w-[1234px] mx-auto px-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <!-- Brand Section -->
+                            <div class="space-y-4">
+                                <img src="assets/logo.png" alt=" Tisas Logo" class="h-[54px] w-[153px]">
+                                <p class="text-sm text-neutral-50 leading-5">
+                                     Tisas is an inclusive celebratory loyalty platform that helps businesses to build
+                                    deeper and more meaningful connection with their customers.
+                                </p>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-white hover:text-[#1977f3] transition-colors">
+                                        <svg width="21" height="24" viewBox="0 0 21 24" fill="currentColor">
+                                            <path
+                                                d="M3 1.5C1.34531 1.5 0 2.84531 0 4.5V19.5C0 21.1547 1.34531 22.5 3 22.5H18C19.6547 22.5 21 21.1547 21 19.5V4.5C21 2.84531 19.6547 1.5 18 1.5H3ZM16.9266 5.4375L12.0609 10.9969L17.7844 18.5625H13.3031L9.79688 13.9734L5.77969 18.5625H3.55313L8.75625 12.6141L3.26719 5.4375H7.86094L11.0344 9.63281L14.7 5.4375H16.9266ZM15.1547 17.2313L7.19062 6.69844H5.86406L13.9172 17.2313H15.15H15.1547Z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-[#1977f3] hover:text-white transition-colors">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 24.002C18.6274 24.002 24 18.6294 24 12.002C24 5.37454 18.6274 0.00195312 12 0.00195312C5.37258 0.00195312 0 5.37454 0 12.002C0 18.6294 5.37258 24.002 12 24.002Z" />
+                                            <path
+                                                d="M16.6712 15.4708L17.2028 12.0012H13.875V9.75008C13.875 8.80169 14.3391 7.87524 15.8308 7.87524H17.3445V4.92207C17.3445 4.92207 15.9709 4.6875 14.658 4.6875C11.9175 4.6875 10.1253 6.34803 10.1253 9.35688V12.0012H7.07764V15.4708H10.1253V23.8561C10.7362 23.9523 11.3623 24.0012 12.0002 24.0012C12.638 24.0012 13.2641 23.9506 13.875 23.8561V15.4708H16.6712Z"
+                                                fill="white" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="text-white hover:text-[#FFDD55] transition-colors">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12.006 0.181641C7.07127 0.181641 5.62804 0.186732 5.34751 0.210004C4.33481 0.294186 3.70465 0.453641 3.01812 0.795459C2.48905 1.05819 2.07179 1.36273 1.65998 1.78964C0.910006 2.56819 0.455474 3.526 0.290934 4.66455C0.210936 5.21728 0.187664 5.33 0.182937 8.15328C0.181119 9.09437 0.182937 10.3329 0.182937 11.9942C0.182937 16.9251 0.188391 18.3669 0.212027 18.6469C0.293843 19.6324 0.448383 20.2524 0.775646 20.9306C1.40108 22.2287 2.59559 23.2033 4.00282 23.5669C4.49008 23.6924 5.02824 23.7615 5.71913 23.7942C6.01185 23.8069 8.9954 23.816 11.9808 23.816C14.9661 23.816 17.9515 23.8124 18.2369 23.7978C19.0369 23.7602 19.5014 23.6978 20.0151 23.5651C21.4314 23.1996 22.6041 22.2396 23.2422 20.9233C23.5631 20.2615 23.7259 19.6178 23.7995 18.6838C23.8155 18.4802 23.8222 15.2335 23.8222 11.9911C23.8222 8.74819 23.8149 5.50746 23.7989 5.30382C23.7244 4.35473 23.5617 3.71655 23.2304 3.042C22.9586 2.48982 22.6568 2.07746 22.2186 1.65582C21.4367 0.908913 20.4803 0.454368 19.3407 0.290004C18.7886 0.210186 18.6786 0.18655 15.8532 0.181641H12.006Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Useful Links -->
+                            <div class="space-y-4">
+                                <h3 class="text-base text-white/40">Useful links</h3>
+                                <nav class="space-y-2">
+                                    <a href="about.html"
+                                        class="block text-sm text-neutral-50 hover:text-[#b78d3f]">About Us</a>
+                                    <a href="contact.html"
+                                        class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Contact Us</a>
+                                    <a href="#" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Terms &
+                                        Condition</a>
+                                    <a href="privacy-policy.html"
+                                        class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Privacy Policy</a>
+                                </nav>
+                            </div>
+
+                            <!-- Users -->
+                            <div class="space-y-4">
+                                <h3 class="text-base text-white/40">Users</h3>
+                                <nav class="space-y-2">
+                                    <a href="#" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Merchants</a>
+                                    <a href="customers.html"
+                                        class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Customers</a>
+                                </nav>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="space-y-4">
+                                <h3 class="text-base text-white/40">Contact</h3>
+                                <div class="space-y-2">
+                                    <a href="mailto:support@btoken.com"
+                                        class="block text-sm text-neutral-50 hover:text-[#b78d3f]">support@btoken.com</a>
+                                    <p class="text-sm text-neutral-50">Lorem ipsum dolor sit amet consectetur. Id.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <style>
+        /* Ensure the mobile menu doesn't overflow on small screens */
+        #mobile-menu {
+            max-height: calc(100vh - 6rem);
+            /* Adjust based on your header height */
+            overflow-y: auto;
+        }
+
+        /* Optional: Add smooth transitions for the mobile menu */
+        #mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #mobile-menu.hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+    </style>
+</body>
+
+</html>

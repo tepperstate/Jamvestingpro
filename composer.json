@@ -1,0 +1,86 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "bacon/bacon-qr-code": "^2.0",
+        "barryvdh/laravel-dompdf": "^3.0",
+        "biscolab/laravel-recaptcha": "^6.0",
+        "carbonphp/carbon-doctrine-types": "^2.0",
+        "devrabiul/laravel-geo-genius": "^1.5",
+        "devrabiul/laravel-toaster-magic": "^2.0",
+        "doctrine/dbal": "^3.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "hexters/coinpayment": "^3.0",
+        "laravel/framework": "^10.0",
+        "laravel/sanctum": "^3.2",
+        "laravel/socialite": "^5.27",
+        "livewire/livewire": "^2.0",
+        "mckenziearts/laravel-notify": "^2.7",
+        "pragmarx/google2fa-laravel": "^2.2",
+        "simplesoftwareio/simple-qrcode": "^4.2"
+    },
+    "require-dev": {
+        "enlightn/enlightn": "^2.10",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/pint": "^1.0",
+        "laravel/sail": "^1.0.1",
+        "laravel/tinker": "^2.7",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^7.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpunit/phpunit": "^10.0",
+        "spatie/laravel-ignition": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files":[
+            "app/helpers.php"
+        ]
+    },
+   
+
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

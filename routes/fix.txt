@@ -1,0 +1,41 @@
+   });
+
+   //signal
+   Route::middleware(['plan_feature:signal'])->group(function() {
+       Route::get('/signals', [SignalController::class, 'signals'])->name("signal");
+       Route::post('/signals/buy', [SignalController::class, 'buy_signal'])->name('signals.buy');
+       Route::get('/signals/my-subscriptions', [SignalController::class, 'alluser_signal'])->name('signals.user');
+       Route::get('/signals/history', [SignalController::class, 'user_signal'])->name('signals.user-history'); // user signal history
+   });
+
+  //toggle Demo
+  Route::get('/demo',[TradeController::class, 'toggleDemo'])->name("toggleDemo");
+
+  //how to deposit
+  Route::get('/how',[IndexController::class,'how'])->name("how");
+
+  //vidoes
+  Route::get('/video',[CopyTradeController::class, 'video'])->name("video");
+
+  //wallet
+  Route::get('/wallets',[user_wallet::class,'index'])->name("dashboard.wallets");
+  Route::get('/wallets/manage',[user_wallet::class,'manage'])->name("dashboard.wallets.manage");
+  Route::post('/wallets/toggle',[user_wallet::class,'toggleWallet'])->name("wallets.toggle");
+  //swap
+  Route::get('/swap',[user_wallet::class,'swap'])->name("user.swap");
+  Route::get('/swap/{id}',[user_wallet::class,'swap_to'])->name("user.swap.coin");
+  Route::post('/swap/post',[user_wallet::class,'swap_coin'])->name('swap.coin');
+
+  //investment
+  Route::middleware(['plan_feature:high_yield'])->group(function() {
+      Route::get('/investment', [InvestmentController::class, 'index'])->name("investment");
+      Route::post('/investment/post', [InvestmentController::class, 'store'])->name("investment.post");
+  });
+
+  // ===== MUTUAL FUNDS =====
+  Route::middleware(['plan_feature:mutual_funds'])->group(function() {
+      Route::get('/mutual-funds', [\App\Http\Controllers\User\MutualFundController::class, 'index'])->name('user.mutual_funds');
+      Route::post('/mutual-funds/invest', [\App\Http\Controllers\User\MutualFundController::class, 'invest'])->name('user.mutual_fund.invest');
+      Route::get('/mutual-funds/portfolio', [\App\Http\Controllers\User\MutualFundController::class, 'portfolio'])->name('user.mutual_fund.portfolio');
+      Route::post('/mutual-funds/redeem', [\App\Http\Controllers\User\MutualFundController::class, 'redeem'])->name('user.mutual_fund.redeem');
+  });

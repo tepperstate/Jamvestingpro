@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Withdrawal extends Model
+{
+    use HasFactory;
+
+    public $fillable = [
+        'user_id',
+        'trx_id',
+        'type',
+        'address',
+        'amount',
+        'hash',
+        'status',
+        'updated_at',
+        'created_at',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+}

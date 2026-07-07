@@ -1,0 +1,22 @@
+.js-filter-wrapper,.js-filter-guidelines,#block-finlance-page-title,#block-finlance-content footer,.viewsreference--view-title{
+    display: none;
+}
+
+.pager__items{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.pager__items li{
+	display: inline;
+	margin: 10px;
+
+}
+.pager__items li a{
+    color: #72d270;
+    text-decoration: none;
+}
+
+.js-form-required{
+    margin: 10px;
+}

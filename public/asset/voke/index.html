@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TisasNg - Boost Sales, Reward Customers, and Grow Your Business</title>
+    <!-- Tailwind CSS via CDN (for development) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="./output.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Add Swiper CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-[rgba(17,17,17,0.90)] w-full">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html"><img src="assets/logo.png" class="h-12 w-auto" alt="Logo"></a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="about.html" class="text-white hover:text-gray-300 text-base font-light">About Us</a>
+                        <a href="business.html"
+                            class="text-white hover:text-gray-300 text-base font-light">Businesses</a>
+                        <a href="customers.html"
+                            class="text-white hover:text-gray-300 text-base font-light">Customers</a>
+                        <a href="contact.html" class="text-white hover:text-gray-300 text-base font-light">Contact
+                            Us</a>
+                    </div>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-4">
+                        <a href="login.html"
+                            class="bg-transparent text-white font-medium px-4 py-2 rounded hover:bg-white/10 transition duration-300">
+                            Login
+                        </a>
+                        <a href="signup.html"
+                            class="bg-[#b78d3f] text-white font-medium px-6 py-2 rounded-2xl hover:bg-[#a67d36] transition duration-300">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="about.html"
+                    class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">About
+                    Us</a>
+                <a href="business.html#"
+                    class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Businesses</a>
+                <a href="customers.html#"
+                    class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Customers</a>
+                <a href="contact.html"
+                    class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Contact
+                    Us</a>
+            </div>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="login.html"
+                    class="block w-full text-left text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">
+                    Login
+                </a>
+                <a href="signup.html"
+                    class="block w-full text-left bg-[#b78d3f] text-white px-3 py-2 rounded-md text-base font-medium">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1 -->
+    <div class="bg-[#cbfcd9] w-full " data-aos="fade-right" data-aos-duration="1000">
+        <div class="bg-[url('assets/youverify.png')] bg-cover bg-no-repeat bg-center w-full" data-aos="fade-up"
+            data-aos-duration="1000">
+            <div class="w-full px-4 md:px-12  box-border">
+                <div
+                    class="flex flex-col justify-center items-start w-full max-w-[1146px] mx-auto pt-20 md:pt-[148px] pb-20 md:pb-[149px]">
+                    <div class="flex flex-col gap-6 w-full">
+                        <!-- Heading and Description -->
+                        <div class="flex flex-col gap-4">
+                            <p data-aos="fade-right" data-aos-duration="1000"
+                                class="font-['Plus_Jakarta_Sans'] text-4xl md:text-6xl font-bold leading-[44px] md:leading-[66px] text-[#111111]">
+                                Boost Sales, Reward Customers, <br> and Grow Your <br><span class="text-[#b78d3f]">Business with TisasNg.</span>
+                                    
+                            </p>
+                            <p data-aos="fade-up" data-aos-duration="1000"
+                                class="font-['Outfit'] text-base font-light leading-[22.5px] text-[#111111] w-full md:w-[657px]">
+                                Tisas helps businesses attract and retain customers by turning transactions into exciting rewards. Give your customers Tisas, increase repeat patronage, and watch your sales soar!.
+                            </p>
+                        </div>
+
+                        <!-- Prize Section -->
+                        <div class="flex flex-col gap-2.5 w-full md:w-[381px]" data-aos="fade-right"
+                            data-aos-duration="1000">
+                            <div class="flex flex-col gap-1">
+                                <p class="font-['Outfit'] text-xl font-normal leading-6 text-[#111111]">
+                                    Your Customers can win</p>
+                                <div
+                                    class="bg-[#d9ab56] flex justify-center items-center gap-2.5 w-full p-2.5 rounded-[10px]">
+                                    <p class="font-['Outfit'] text-2xl font-bold leading-[29px] text-[#111111]">
+                                        ₦3,000 - ₦5,000,000 Weekly
+                                    </p>
+                                </div>
+                            </div>
+                            <p data-aos="fade-down" data-aos-duration="1000"
+                                class="font-['Outfit'] text-base font-light leading-[22.5px] text-[#111111]">
+                                Or A Paid Weekend Vacation and &amp; Lot&apos;s of other
+                                prizes
+                            </p>
+                        </div>
+
+                        <!-- Button -->
+                        <button
+                            class="bg-[#b78d3f] font-['Outfit'] text-base font-semibold text-white w-full md:w-[270px] h-[66px] rounded-2xl">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section 2 -->
+    <div class="flex flex-col items-center w-full box-border py-12 md:py-[100px]" data-aos="fade-up"
+        data-aos-duration="1000">
+        <div class="w-full max-w-[1240px] px-4 md:px-0">
+            <div class="flex flex-col gap-10 w-full">
+                <!-- Heading and Description -->
+                <div class="flex flex-col gap-3 w-full">
+                    <p
+                        class="font-['Plus_Jakarta_Sans'] text-3xl md:text-4xl font-bold leading-[36px] md:leading-10 text-[#111111]">
+                        How it Works
+                    </p>
+                    <p
+                        class="font-['Outfit'] text-base font-normal leading-[19px] opacity-80 text-[#111111] w-full md:w-[972px]">
+                        Tisas makes every transaction meaningful. Whether you’re a business looking to increase sale or a customer who loves great deals or a referrer who needs a passive income, or you just love supporting charities. Tisas grants it all
+                    </p>
+                </div>
+
+                <!-- Buttons and Cards -->
+                <div class="flex flex-col md:flex-row gap-6 w-full">
+                    <!-- Buttons Column -->
+                    <div
+                        class="bg-[#b78d3f] flex flex-col justify-center items-center gap-4 w-full md:w-[292px] h-[278px] p-6 rounded-2xl">
+                        <button
+                            class="bg-white font-['Outfit'] text-xl font-normal text-[#2f3038] w-full h-[54px] rounded-[29px]">
+                            Business
+                        </button>
+                        <button
+                            class="border border-white bg-transparent font-['Outfit'] text-xl font-normal text-white w-full h-[54px] rounded-[29px]">
+                            Customers
+                        </button>
+                        <button
+                            class="border border-white bg-transparent font-['Outfit'] text-xl font-normal text-white w-full h-[54px] rounded-[29px]">
+                            Referrers
+                        </button>
+                    </div>
+
+                    <!-- Cards Row -->
+                    <div class="flex flex-col md:flex-row gap-6 w-full">
+                        <!-- Card 1 -->
+                        <div
+                            class="bg-white flex flex-col justify-start items-start p-6 rounded-[10px] w-full md:w-[292px] h-[250px]">
+                            <div class="flex justify-between items-center w-full">
+                                <img src="assets/user.png" class="h-[33px] w-[46px]" alt="User Icon" />
+                                <p class="font-['Outfit'] text-2xl font-semibold leading-[26.5px] text-[#2f3038]">
+                                    01</p>
+                            </div>
+                            <div class="mt-6">
+                                <p class="font-['Outfit'] text-lg font-normal leading-5 text-[#2f3038]">
+                                    Create a FREE Merchant Account
+                                </p>
+                                <p
+                                    class="font-['Outfit'] text-sm font-normal leading-[17px] opacity-80 text-[#2f3038] mt-2.5">
+                                    Create a free merchant account and start rewarding your customers
+                                    effortlessly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Arrow Icon (Hidden on Mobile) -->
+                        <div class="hidden md:flex items-center justify-center w-6 h-6">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.333,19l6.667,-6.5M22,12.5l-6.667,-6.5M22,12.5h-20" stroke="#2F3038"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="bg-white flex flex-col justify-start items-start p-6 rounded-[10px] w-full md:w-[292px] h-[250px]">
+                            <div class="flex justify-between items-center w-full">
+                                <img src="assets/cog.png" class="h-11 w-11" alt="Cog Icon" />
+                                <p class="font-['Outfit'] text-2xl font-semibold leading-[26.5px] text-[#2f3038]">
+                                    02</p>
+                            </div>
+                            <div class="mt-6">
+                                <p class="font-['Outfit'] text-lg font-normal leading-5 text-[#2f3038]">
+                                    Set Spending Thresholds For Rewards
+                                </p>
+                                <p
+                                    class="font-['Outfit'] text-sm font-normal leading-[17px] opacity-80 text-[#2f3038] mt-2.5">
+                                    Set spending thresholds for your customers to earn rewards. You can
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Arrow Icon (Hidden on Mobile) -->
+                        <div class="hidden md:flex items-center justify-center w-6 h-6">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.333,19l6.667,-6.5M22,12.5l-6.667,-6.5M22,12.5h-20" stroke="#2F3038"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="bg-white flex flex-col justify-start items-start p-6 rounded-[10px] w-full md:w-[292px] h-[250px]">
+                            <div class="flex justify-between items-center w-full">
+                                <img src="assets/gift.png" class="h-[42px] w-[42px]" alt="Gift Icon" />
+                                <p class="font-['Outfit'] text-2xl font-semibold leading-[26.5px] text-[#2f3038]">
+                                    03</p>
+                            </div>
+                            <div class="mt-6">
+                                <p class="font-['Outfit'] text-lg font-normal leading-5 text-[#2f3038]">
+                                    Gift Token to Customers when they meet your set threshold
+                                </p>
+                                <p
+                                    class="font-['Outfit'] text-sm font-normal leading-[17px] opacity-80 text-[#2f3038] mt-2.5">
+                                    Delight your customers with gift tokens when they reach your set spending thresholds, turning every purchase into a rewarding experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section 3 -->
+    <div class="bg-[#2e2b26] flex flex-col w-full mt-12 md:mt-24 box-border py-8 md:py-12 px-4 section-3"
+        data-aos="fade-up" data-aos-duration="1000">
+        <div class="flex flex-col w-full md:flex-row">
+            <!-- Left Column -->
+            <div class="w-full md:w-1/2 relative">
+                <div
+                    class="absolute top-0 left-0 w-[100px] h-[80px] md:w-[206px] md:h-[164px] rounded-full border-[15px] md:border-[30px] border-solid border-[rgba(255,255,255,0.10)]">
+                </div>
+                <div
+                    class="absolute top-0 left-0 w-[200px] h-[100px] md:w-[473px] md:h-[201px] bg-[#eeeeee] rounded-l-[8px] md:rounded-l-[16px]">
+                </div>
+                <div class="relative mt-[-80px] md:mt-[-164px]">
+                    <img src="assets/image1.png" class="w-full h-auto object-cover rounded-lg md:rounded-2xl"
+                        alt="Image 1" />
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="w-full md:w-1/2 mt-8 md:mt-0 md:pt-[218px] md:pl-[35px]">
+                <div class="flex flex-col gap-4">
+                    <p
+                        class="font-['Plus_Jakarta_Sans'] text-2xl md:text-[40px] font-semibold leading-[28px] md:leading-[44px] text-[#f1f1f1]">
+                        Ever wondered if your spending could do more, or your business could retain
+                        customers effortlessly?
+                    </p>
+                    <p
+                        class="font-['Outfit'] text-base md:text-lg font-normal leading-[20px] md:leading-[21.5px] opacity-80 text-white">
+                        With  Tisas, spending turns into saving, and loyalty becomes growth.
+                    </p>
+                    <button
+                        class="bg-[#b78d3f] font-['General_Sans'] text-base font-medium text-white w-full md:w-[270px] h-[50px] rounded-2xl">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="flex flex-col items-center w-full box-border py-12 md:py-[100px]" data-aos="fade-down"
+        data-aos-duration="1000">
+        <div class="w-full max-w-[1040px] px-4 md:px-0">
+            <div class="flex flex-col gap-10 w-full">
+                <!-- Heading and Description -->
+                <div class="flex flex-col gap-3 w-full" data-aos="fade-right" data-aos-duration="1000">
+                    <p
+                        class="font-['Plus_Jakarta_Sans'] text-3xl md:text-4xl font-bold text-center leading-[36px] md:leading-10 text-[#111111]">
+                        Why Choose Tisas as a Merchants?
+                    </p>
+                    <p
+                        class="font-['Outfit'] text-base font-normal text-center leading-[19px] opacity-80 text-[#111111] w-full md:w-[855px] mx-auto">
+                        Stand apart from your competition with Tisas’ extensive network of consumers. We know that your customers expect rewards in form of cashback, coupons, and life-changing offers when they spend. And that’s why we’re here – to help you elevate their experience and fulfill their expectation through our seamlessly platform. With Tisas, your customers feel valued, and you earn more revenue in the process..
+                    </p>
+                </div>
+
+                <!-- For Businesses Section -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-[76px] w-full">
+                    <!-- Benefits List -->
+                    <div class="flex flex-col gap-8 w-full md:w-1/2" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="flex flex-col gap-5">
+                            <p class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#111111]">
+                                For Businesses
+                            </p>
+                            <div class="flex flex-col gap-2.5">
+                                <!-- Benefit Item -->
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Create a FREE Merchant Account.
+                                    </p>
+                                </div>
+                                <!-- Repeat for other benefit items -->
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Fund Your Wallet – Add funds to your Tisas Gifting Purse.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Set Your Spending Threshold – Choose how much customers must spend to earn Tisas.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Gift Tisas – Customers who qualify receive Tisas instantly after purchase.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Track & Grow – Use Tisas analytics to understand customer behavior and optimize sales.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        It&apos;s another revenue stream - refer other users and keep
+                                        earning commissions and bonuses on their activities.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Button -->
+                            <button
+                                class="bg-[#b78d3f] font-['General_Sans'] text-base font-medium text-white w-full md:w-[270px] h-[50px] rounded-2xl">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Image -->
+                    <div
+                        class="shadow-[0px_2px_10px_rgba(0,0,0,0.16)] bg-[#f1f1f1] w-full md:w-[531px] h-[546px] p-4 rounded-[20px]">
+                        <img src="assets/image2.png" class="w-full h-full object-cover rounded-[10px]" alt="Image 2" />
+                    </div>
+                </div>
+
+                <!-- For Customers Section -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-24 w-full" data-aos="fade-up"
+                    data-aos-duration="1000">
+                    <!-- Images -->
+                    <div class="flex flex-col gap-4 w-full md:w-1/2">
+                        <img src="assets/image3.png" class="w-full h-auto" alt="Image 3" />
+                        <img src="assets/image4.png" class="w-full h-auto object-cover" alt="Image 4" />
+                    </div>
+
+                    <!-- Benefits List -->
+                    <div class="flex flex-col gap-8 w-full md:w-1/2 items-center justify-center">
+                        <div class="flex flex-col gap-5 justify-center">
+                            <p class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#111111]">
+                                For Customers
+                            </p>
+                            <div class="flex flex-col gap-2.5">
+                                <!-- Benefit Item -->
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Shop: Patronize Any Tisas Partner Business.
+                                    </p>
+                                </div>
+                                <!-- Repeat for other benefit items -->
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Win exciting prizes from cash rewards to exclusive vacations.
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Earn: Receive Tisas token(s) as a Reward
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_478_39612)">
+                                                <path
+                                                    d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                    fill="#3E4DB8" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_478_39612">
+                                                    <rect width="16" height="16" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                        Get Reward: Redeem your gifted Tisas for Instant Cashback and weekly Prizes or Donate to Charity.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <button
+                            class="bg-[#b78d3f] font-['General_Sans'] text-base font-medium text-white w-full md:w-[270px] h-[50px] rounded-2xl">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- As a Referrers Section -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-[140px] w-full" data-aos="fade-down"
+                    data-aos-duration="1000">
+                    <!-- Benefits List -->
+                    <div class="flex flex-col gap-8 w-full md:w-1/2 items-center justify-center">
+                        <div class="flex flex-col gap-5">
+                            <p class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#111111]">
+                                As a Referrers
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_478_39612)">
+                                            <path
+                                                d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                fill="#3E4DB8" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_478_39612">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                    Share Your Referral Code with businesses & customers.
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_478_39612)">
+                                            <path
+                                                d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                fill="#3E4DB8" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_478_39612">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                    Earn a commission on every Tisas purchase from your referrals.
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 text-[#3e4db8]"><svg width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_478_39612)">
+                                            <path
+                                                d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM12.03 4.97C11.9586 4.89882 11.8735 4.84277 11.7799 4.80522C11.6863 4.76766 11.5861 4.74936 11.4853 4.75141C11.3845 4.75347 11.2851 4.77583 11.1932 4.81717C11.1012 4.85851 11.0185 4.91797 10.95 4.992L7.477 9.417L5.384 7.323C5.24183 7.19052 5.05378 7.1184 4.85948 7.12183C4.66518 7.12525 4.47979 7.20397 4.34238 7.34138C4.20497 7.47879 4.12625 7.66418 4.12283 7.85848C4.1194 8.05278 4.19152 8.24083 4.324 8.383L6.97 11.03C7.04128 11.1012 7.12616 11.1572 7.21958 11.1949C7.313 11.2325 7.41305 11.2509 7.51375 11.2491C7.61444 11.2472 7.71374 11.2251 7.8057 11.184C7.89766 11.1429 7.9804 11.0837 8.049 11.01L12.041 6.02C12.1771 5.8785 12.2523 5.68928 12.2504 5.49296C12.2485 5.29664 12.1698 5.10888 12.031 4.97H12.03Z"
+                                                fill="#3E4DB8" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_478_39612">
+                                                <rect width="16" height="16" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <p class="font-['Outfit'] text-base font-light text-[#111111]">
+                                    Bonus Payouts if a referred merchant’s customer wins big!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <img src="assets/image5.png" class="w-full md:w-[481px] h-auto" alt="Image 5" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Update the container structure -->
+    <div class="w-full px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="max-w-[1340px] mx-auto">
+            <div class="flex flex-col gap-8">
+                <!-- Heading Section -->
+                <div class="w-full">
+                    <p data-aos="fade-up" data-aos-duration="1000"
+                        class="font-['Plus_Jakarta_Sans'] text-2xl md:text-4xl font-bold text-center leading-8 md:leading-10 text-[#111111]">
+                        User Testimonials of  Tisas
+                    </p>
+                    <p
+                        class="font-['Outfit'] text-sm md:text-base font-normal text-center leading-[17px] md:leading-[19px] opacity-[0.80] text-[#111111] max-w-[855px] mx-auto mt-3">
+                        See what our clients say about us
+
+                    </p>
+                </div>
+
+                <!-- Content Section -->
+                <div class="flex flex-col gap-6 mt-8">
+                    <!-- Image and Text Section -->
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="w-full lg:w-[36.27%]">
+                            <img src="assets/image6.png" class="w-full h-[200px] md:h-[350px] object-cover rounded-lg"
+                                alt="Image 6" />
+                        </div>
+                        <div class="w-full lg:w-[63.73%] py-4 px-2 lg:px-[15px]" data-aos="fade-right"
+                            data-aos-duration="1000">
+                            <p
+                                class="font-['Plus_Jakarta_Sans'] text-xl md:text-4xl font-semibold leading-7 md:leading-10 text-[#111111]">
+                                "Tisas has revolutionized our customer engagement. The rewards system is a game-changer!"
+                            </p>
+                            <p
+                                class="font-['Outfit'] text-sm md:text-lg font-light leading-[20px] md:leading-[21.5px] opacity-[0.80] text-[#111111] mt-2">
+                                Tisas has been a game-changer for our business. The rewards system has significantly increased customer engagement and loyalty. Highly recommended!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Cards Section -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full  lg:-mt-28">
+                        <!-- Testimonial Card 1 -->
+                        <div data-aos="fade-up" data-aos-duration="1000"
+                            class="border bg-[white] w-full h-auto p-6 rounded-[10px] border-solid border-[#111111]">
+                            <div class="w-6 h-6 text-[#3e4db8] flex">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 22C10.6868 22 9.38642 21.7413 8.17317 21.2388C6.95991 20.7362 5.85752 19.9997 4.92893 19.0711C4.00035 18.1425 3.26375 17.0401 2.7612 15.8268C2.25866 14.6136 2 13.3132 2 12C2 9.34783 3.05357 6.80429 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C13.3132 2 14.6136 2.25866 15.8268 2.7612C17.0401 3.26375 18.1425 4.00035 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34314C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34314C4.84285 7.84343 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM14 7L11 7L9 11L9 17L15 17L15 11L12 11L14 7Z"
+                                        fill="#3E4DB8" />
+                                </svg>
+                            </div>
+                            <p
+                                class="[font-family:Outfit,sans-serif] text-base font-light tracking-[0.16px] text-left leading-[19px] opacity-[0.80] text-[#111111] max-w-[311px] box-border mt-3.5 m-0 p-0">
+                                Our business was experiencing low sales, someone introduced  Tisas to us as a
+                                sales boosting platform. <br />Ever since we signed up, the platform has helped
+                                us reward our customers while increasing sales!
+                            </p>
+                            <div class="box-border flex justify-start items-start flex-row gap-2.5 mt-[17px]">
+                                <img src="assets/image7.png"
+                                    class="h-10 max-w-[initial] object-cover w-10 box-border block grow-0 shrink-0 basis-auto rounded-[50%] border-[none]" />
+                                <div
+                                    class="box-border flex justify-start items-start flex-col gap-[3px] w-[100px] grow-0 shrink-0 basis-auto">
+                                    <p
+                                        class="[font-family:Outfit,sans-serif] text-sm font-normal tracking-[0.14px] leading-[17px] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                                        John Doe</p>
+                                    <p
+                                        class="[font-family:Outfit,sans-serif] text-xs font-light tracking-[0.12px] text-left leading-[14.5px] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                                        Merchant</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Card 2 -->
+                        <div data-aos="fade-right" data-aos-duration="1000"
+                            class="border bg-[white] w-full h-auto p-6 rounded-[10px] border-solid border-[#111111]">
+                            <div class="w-[100.00%] box-border">
+                                <div class="w-6 h-6 text-[#3e4db8] flex">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12 22C10.6868 22 9.38642 21.7413 8.17317 21.2388C6.95991 20.7362 5.85752 19.9997 4.92893 19.0711C4.00035 18.1425 3.26375 17.0401 2.7612 15.8268C2.25866 14.6136 2 13.3132 2 12C2 9.34783 3.05357 6.80429 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C13.3132 2 14.6136 2.25866 15.8268 2.7612C17.0401 3.26375 18.1425 4.00035 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34314C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34314C4.84285 7.84343 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM14 7L11 7L9 11L9 17L15 17L15 11L12 11L14 7Z"
+                                            fill="#3E4DB8" />
+                                    </svg>
+                                </div>
+                                <p
+                                    class="[font-family:Outfit,sans-serif] text-base font-light tracking-[0.16px] text-left leading-[19px] opacity-[0.80] text-[#111111] max-w-[311px] box-border mt-3.5 m-0 p-0">
+                                    The reason I now patronise only businesses that gift  Tisas is that every
+                                    token feels like a step closer to my dreams.
+                                </p>
+                            </div>
+                            <div class="box-border flex justify-start items-start flex-row gap-2.5 mt-[74px]">
+                                <img src="assets/image7.png"
+                                    class="h-10 max-w-[initial] object-cover w-10 box-border block grow-0 shrink-0 basis-auto rounded-[50%] border-[none]" />
+                                <div
+                                    class="box-border flex justify-start items-start flex-col gap-[3px] w-[100px] grow-0 shrink-0 basis-auto">
+                                    <p
+                                        class="[font-family:Outfit,sans-serif] text-sm font-normal tracking-[0.14px] leading-[17px] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                                        John Doe</p>
+                                    <p
+                                        class="[font-family:Outfit,sans-serif] text-xs font-light tracking-[0.12px] leading-[14.5px] text-[#111111] grow-0 shrink-0 basis-auto m-0 p-0">
+                                        Customer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Card 3 -->
+                        <div data-aos="fade-right" data-aos-duration="1000"
+                            class="border bg-[white] w-full h-auto p-6 rounded-[10px] border-solid border-[#111111]">
+                            <div class="w-[100.00%] box-border">
+                                <div class="w-6 h-6 text-[#3e4db8] flex">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12 22C10.6868 22 9.38642 21.7413 8.17317 21.2388C6.95991 20.7362 5.85752 19.9997 4.92893 19.0711C4.00035 18.1425 3.26375 17.0401 2.7612 15.8268C2.25866 14.6136 2 13.3132 2 12C2 9.34783 3.05357 6.80429 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C13.3132 2 14.6136 2.25866 15.8268 2.7612C17.0401 3.26375 18.1425 4.00035 19.0711 4.92893C20.9464 6.8043 22 9.34784 22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22ZM12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34314C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34314C4.84285 7.84343 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20ZM14 7L11 7L9 11L9 17L15 17L15 11L12 11L14 7Z"
+                                            fill="#3E4DB8" />
+                                    </svg>
+                                </div>
+                                <p
+                                    class="[font-family:Outfit,sans-serif] text-base font-light tracking-[0.16px] text-left leading-[19px] opacity-[0.80] text-[#111111] max-w-[311px] box-border mt-3.5 m-0 p-0">
+                                     Tisas has transformed how we reward our customers—it&apos;s a
+                                    game-changer!
+                                </p>
+                            </div>
+                            <div class="box-border flex justify-start items-start flex-row gap-2.5 mt-[93px]">
+                                <img src="assets/image7.png"
+                                    class="h-10 max-w-[initial] object-cover w-10 box-border block grow-0 shrink-0 basis-auto rounded-[50%] border-[none]" />
+                                <div
+                                    class="box-border flex justify-start items-start flex-col gap-[3px] w-[100px] grow-0 shrink-0 basis-auto">
+                                    <p
+                                        class="[font-family:Outfit,sans-serif] text-sm font-normal tracking-[0.14px] leading-[17px] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                                        John Doe</p>
+                                    <p
+                                        class="[font-family:Outfit,sans-serif] text-xs font-light tracking-[0.12px] text-left leading-[14.5px] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                                        Merchant</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Our Partners Section with Swiper -->
+    <div class="w-full py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Section Heading -->
+            <h2 class="text-4xl font-bold text-center mb-12">Our Partners</h2>
+
+            <!-- Swiper Container -->
+            <div class="swiper-container overflow-hidden">
+                <div class="swiper-wrapper">
+                    <!-- Seedco Ltd -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo1.png" alt="Seedco Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm text-[#187717]">Seedco Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- NIRSAL Plc -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="NIRSAL Plc" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm text-[#5b800a]">NIRSAL Plc</p>
+                        </div>
+                    </div>
+
+                    <!-- Lead-way Pensure Ltd -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="Lead-way Pensure Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm">Lead-way Pensure Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- Lead-way Pensure Ltd 2 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="Lead-way Pensure Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm">Lead-way Pensure Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- Lead-way Pensure Ltd 3 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="Lead-way Pensure Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm">Lead-way Pensure Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- Lead-way Pensure Ltd 4 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="Lead-way Pensure Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm">Lead-way Pensure Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- Lead-way Pensure Ltd 5 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="Lead-way Pensure Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm">Lead-way Pensure Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- Lead-way Pensure Ltd 6 -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo3.png" alt="Lead-way Pensure Ltd" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm">Lead-way Pensure Ltd</p>
+                        </div>
+                    </div>
+
+                    <!-- NIBSS -->
+                    <div class="swiper-slide">
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center">
+                                <img src="assets/logo4.png" alt="NIBSS" class="w-12 h-12 object-contain">
+                            </div>
+                            <p class="mt-3 text-sm text-[#9c822f]">NIBSS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.swiper-container', {
+                slidesPerView: 1, // Default for mobile
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2, // 2 slides for tablets
+                    },
+                    768: {
+                        slidesPerView: 3, // 3 slides for smaller desktops
+                    },
+                    1024: {
+                        slidesPerView: 4, // 4 slides for larger desktops
+                    },
+                },
+            });
+        });
+    </script>
+
+
+
+
+    <!-- footer -->
+    <footer class="bg-[#1e1e1e] w-full py-16">
+        <div class="max-w-[1234px] mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <img src="assets/logo.png" alt=" Tisas Logo" class="h-[54px] w-[153px]">
+                    <p class="text-sm text-neutral-50 leading-5">
+                         Tisas is an inclusive celebratory loyalty platform that helps businesses to build
+                        deeper and more meaningful connection with their customers.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-[#1977f3] transition-colors">
+                            <svg width="21" height="24" viewBox="0 0 21 24" fill="currentColor">
+                                <path
+                                    d="M3 1.5C1.34531 1.5 0 2.84531 0 4.5V19.5C0 21.1547 1.34531 22.5 3 22.5H18C19.6547 22.5 21 21.1547 21 19.5V4.5C21 2.84531 19.6547 1.5 18 1.5H3ZM16.9266 5.4375L12.0609 10.9969L17.7844 18.5625H13.3031L9.79688 13.9734L5.77969 18.5625H3.55313L8.75625 12.6141L3.26719 5.4375H7.86094L11.0344 9.63281L14.7 5.4375H16.9266ZM15.1547 17.2313L7.19062 6.69844H5.86406L13.9172 17.2313H15.15H15.1547Z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-[#1977f3] hover:text-white transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 24.002C18.6274 24.002 24 18.6294 24 12.002C24 5.37454 18.6274 0.00195312 12 0.00195312C5.37258 0.00195312 0 5.37454 0 12.002C0 18.6294 5.37258 24.002 12 24.002Z" />
+                                <path
+                                    d="M16.6712 15.4708L17.2028 12.0012H13.875V9.75008C13.875 8.80169 14.3391 7.87524 15.8308 7.87524H17.3445V4.92207C17.3445 4.92207 15.9709 4.6875 14.658 4.6875C11.9175 4.6875 10.1253 6.34803 10.1253 9.35688V12.0012H7.07764V15.4708H10.1253V23.8561C10.7362 23.9523 11.3623 24.0012 12.0002 24.0012C12.638 24.0012 13.2641 23.9506 13.875 23.8561V15.4708H16.6712Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-[#FFDD55] transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12.006 0.181641C7.07127 0.181641 5.62804 0.186732 5.34751 0.210004C4.33481 0.294186 3.70465 0.453641 3.01812 0.795459C2.48905 1.05819 2.07179 1.36273 1.65998 1.78964C0.910006 2.56819 0.455474 3.526 0.290934 4.66455C0.210936 5.21728 0.187664 5.33 0.182937 8.15328C0.181119 9.09437 0.182937 10.3329 0.182937 11.9942C0.182937 16.9251 0.188391 18.3669 0.212027 18.6469C0.293843 19.6324 0.448383 20.2524 0.775646 20.9306C1.40108 22.2287 2.59559 23.2033 4.00282 23.5669C4.49008 23.6924 5.02824 23.7615 5.71913 23.7942C6.01185 23.8069 8.9954 23.816 11.9808 23.816C14.9661 23.816 17.9515 23.8124 18.2369 23.7978C19.0369 23.7602 19.5014 23.6978 20.0151 23.5651C21.4314 23.1996 22.6041 22.2396 23.2422 20.9233C23.5631 20.2615 23.7259 19.6178 23.7995 18.6838C23.8155 18.4802 23.8222 15.2335 23.8222 11.9911C23.8222 8.74819 23.8149 5.50746 23.7989 5.30382C23.7244 4.35473 23.5617 3.71655 23.2304 3.042C22.9586 2.48982 22.6568 2.07746 22.2186 1.65582C21.4367 0.908913 20.4803 0.454368 19.3407 0.290004C18.7886 0.210186 18.6786 0.18655 15.8532 0.181641H12.006Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="space-y-4">
+                    <h3 class="text-base text-white/40">Useful links</h3>
+                    <nav class="space-y-2">
+                        <a href="about.html" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">About Us</a>
+                        <a href="contact.html" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Contact Us</a>
+                        <a href="#" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Terms & Condition</a>
+                        <a href="privacy-policy.html" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Privacy
+                            Policy</a>
+                    </nav>
+                </div>
+
+                <!-- Users -->
+                <div class="space-y-4">
+                    <h3 class="text-base text-white/40">Users</h3>
+                    <nav class="space-y-2">
+                        <a href="#" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Merchants</a>
+                        <a href="customers.html"
+                            class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Customers</a>
+                    </nav>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h3 class="text-base text-white/40">Contact</h3>
+                    <div class="space-y-2">
+                        <a href="mailto:support@btoken.com"
+                            class="block text-sm text-neutral-50 hover:text-[#b78d3f]">support@btoken.com</a>
+                        <p class="text-sm text-neutral-50">Lorem ipsum dolor sit amet consectetur. Id.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Ensure the mobile menu doesn't overflow on small screens */
+    #mobile-menu {
+        max-height: calc(100vh - 6rem);
+        /* Adjust based on your header height */
+        overflow-y: auto;
+    }
+
+    /* Optional: Add smooth transitions for the mobile menu */
+    #mobile-menu {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #mobile-menu.hidden {
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    AOS.init();
+</script>
+
+</html>

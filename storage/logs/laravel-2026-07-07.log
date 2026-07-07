@@ -1,0 +1,18 @@
+[2026-07-07 17:51:22] local.ERROR: rename(C:\laragon\www\investors-p2bmarkets\bootstrap\cache\pac8751.tmp,C:\laragon\www\investors-p2bmarkets\bootstrap\cache/packages.php): Access is denied (code: 5) {"exception":"[object] (ErrorException(code: 0): rename(C:\\laragon\\www\\investors-p2bmarkets\\bootstrap\\cache\\pac8751.tmp,C:\\laragon\\www\\investors-p2bmarkets\\bootstrap\\cache/packages.php): Access is denied (code: 5) at C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:233)
+[stacktrace]
+#0 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'rename(C://larag...', 'C://laragon//www//...', 233)
+#1 [internal function]: Illuminate/Foundation/Bootstrap/HandleExceptions->Illuminate/Foundation/Bootstrap/{closure}(2, 'rename(C://larag...', 'C://laragon//www//...', 233)
+#2 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(233): rename('C://laragon//www//...', 'C://laragon//www//...')
+#3 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(181): Illuminate/Filesystem/Filesystem->replace('C://laragon//www//...', '<?php return ar...')
+#4 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(131): Illuminate/Foundation/PackageManifest->write(Array)
+#5 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(107): Illuminate/Foundation/PackageManifest->build()
+#6 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(90): Illuminate/Foundation/PackageManifest->getManifest()
+#7 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(79): Illuminate/Foundation/PackageManifest->config('aliases')
+#8 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate/Foundation/PackageManifest->aliases()
+#9 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(286): Illuminate/Foundation/Bootstrap/RegisterFacades->bootstrap(Object(Illuminate/Foundation/Application))
+#10 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(186): Illuminate/Foundation/Application->bootstrapWith(Array)
+#11 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate/Foundation/Http/Kernel->bootstrap()
+#12 C:/laragon/www/investors-p2bmarkets/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#13 C:/laragon/www/investors-p2bmarkets/public/index.php(51): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#14 {main}
+"} 

@@ -1,0 +1,86 @@
+@extends('layouts.admin.app')
+@section('content')
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="font-weight-bold text-white mb-1">Package Features</h4>
+            <p class="text-secondary mb-0">Manage items and features for <span class="text-primary font-weight-bold">{{ $data->name }}</span>.</p>
+        </div>
+        <a onclick="history.back()" href="javascript:void(0)" class="btn btn-outline-light btn-sm rounded-pill px-3">
+            <i class="ri-arrow-left-line me-1"></i> Back
+        </a>
+    </div>
+
+    <div class="row">
+        <!-- Add Feature Form -->
+        <div class="col-xl-4 col-lg-5 mb-4">
+            <div class="glass-card p-4 h-100">
+                <h5 class="outfit font-weight-bold mb-4 text-white">Add New Feature</h5>
+                <form method="POST" action="{{ route('store_package_list') }}" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $data->id }}">
+                    
+                    <div class="form-group mb-4">
+                        <label class="small text-secondary font-weight-bold text-uppercase mb-2">Feature Description / Perk</label>
+                        <textarea name="name" class="form-control bg-dark-soft border-glass text-white py-3" rows="3" placeholder="e.g. 24/7 Priority Support" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-3 font-weight-bold rounded-3 shadow-lg">
+                        <i class="ri-add-line me-2"></i> ADD TO PACKAGE
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Features List -->
+        <div class="col-xl-8 col-lg-7 mb-4">
+            <div class="glass-card p-0 h-100 overflow-hidden">
+                <div class="p-4 border-bottom border-glass d-flex justify-content-between align-items-center bg-black-soft">
+                    <h5 class="outfit font-weight-bold mb-0 text-white">Included Features</h5>
+                    <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill">{{ count($list) }} Features</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-black-soft text-secondary small text-uppercase">
+                            <tr>
+                                <th class="border-0 px-4 py-3">ID</th>
+                                <th class="border-0 py-3">Feature Name</th>
+                                <th class="border-0 px-4 py-3 text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-white border-glass font-text">
+                            @foreach ($list as $key => $c)
+                            <tr class="border-glass">
+                                <td class="px-4 text-secondary">{{ $key + 1 }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-2 rounded-circle bg-success-soft text-success me-3">
+                                            <i class="ri-check-line small"></i>
+                                        </div>
+                                        <span class="text-white">{{ $c->data }}</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 text-end">
+                                    <a href="{{ route('delete_package_list', $c->id) }}" class="btn btn-outline-danger btn-sm border-glass rounded-pill px-3" onclick="return confirm('Remove this feature?')">
+                                        <i class="ri-delete-bin-line me-1"></i> Remove
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-dark-soft { background: rgba(0,0,0,0.2) !important; }
+    .bg-black-soft { background: rgba(0,0,0,0.3) !important; }
+    .border-glass { border-color: rgba(255,255,255,0.05) !important; }
+    .bg-primary-soft { background: rgba(59, 130, 246, 0.1); }
+    .bg-success-soft { background: rgba(255, 51, 51, 0.1); }
+    .table-hover tbody tr:hover { background: rgba(255,255,255,0.02); }
+</style>
+@endsection

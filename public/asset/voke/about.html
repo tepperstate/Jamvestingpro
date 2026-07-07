@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TisasNg - Boost Sales, Reward Customers, and Grow Your Business</title>
+    <!-- Tailwind CSS via CDN (for development) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Remove the fixed width container -->
+    <div class="w-full">
+        <div class="bg-[#f1f1f1] w-full">
+            <div class="flex flex-col w-full">
+                <nav class="bg-[rgba(17,17,17,0.90)] w-full">
+                    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex items-center justify-between h-24">
+                            <!-- Logo -->
+                            <div class="flex-shrink-0">
+                                <a href="index.html"> <img src="assets/logo.png" class="h-14 w-auto" alt="Logo"></a>
+                            </div>
+
+                            <!-- Desktop Menu -->
+                            <div class="hidden md:block">
+                                <div class="ml-10 flex items-baseline space-x-8">
+                                    <a href="about.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">About Us</a>
+                                    <a href="business.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">Businesses</a>
+                                    <a href="customers.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">Customers</a>
+                                    <a href="contact.html"
+                                        class="text-white hover:text-gray-300 text-base font-light">Contact
+                                        Us</a>
+                                </div>
+                            </div>
+
+                            <!-- Desktop Buttons -->
+                            <div class="hidden md:block">
+                                <div class="flex items-center space-x-4">
+                                    <a href="login.html"
+                                        class="bg-transparent text-white font-medium px-4 py-2 rounded hover:bg-white/10 transition duration-300">
+                                        Login
+                                    </a>
+                                    <a href="signup.html"
+                                        class="bg-[#b78d3f] text-white font-medium px-6 py-2 rounded-2xl hover:bg-[#a67d36] transition duration-300">
+                                        Sign Up
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Menu Button -->
+                            <div class="-mr-2 flex md:hidden">
+                                <button type="button" id="mobile-menu-button"
+                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu (Hidden by Default) -->
+                    <div class="md:hidden hidden" id="mobile-menu">
+                        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <a href="about.html"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">About
+                                Us</a>
+                            <a href="business.html#"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Businesses</a>
+                            <a href="customers.html#"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Customers</a>
+                            <a href="contact.html"
+                                class="block text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">Contact
+                                Us</a>
+                        </div>
+                        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <a href="login.html"
+                                class="block w-full text-left text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium">
+                                Login
+                            </a>
+                            <a href="signup.html"
+                                class="block w-full text-left bg-[#b78d3f] text-white px-3 py-2 rounded-md text-base font-medium">
+                                Sign Up
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Hero Section -->
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 wow animate__fadeIn">
+                    <div class="flex flex-col lg:flex-row items-center py-14 lg:py-[60px]">
+                        <!-- Left Column (Text Content) -->
+                        <div class="lg:w-[652px] space-y-6">
+                            <!-- Heading -->
+                            <div class="flex flex-col gap-2">
+                                <p class="font-['Outfit'] text-base font-medium text-[#3e4db8]">
+                                    Who We Are
+                                </p>
+                                <p
+                                    class="font-['Plus_Jakarta_Sans'] text-4xl md:text-5xl font-extrabold leading-[44px] md:leading-[67px] text-[#111111]">
+                                    We&apos;re here to Create <span class="text-neutral-500">Connections and Build
+                                        Growth.</span>
+                                </p>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="font-['Outfit'] text-base font-light leading-[22.5px] text-[#38352f]">
+                                At  Tisas, we believe every transaction should be more than just an exchange. It should
+                                be an opportunity to create <span class="font-medium">VALUE</span> for businesses and
+                                <span class="font-medium">JOY</span> for customers. We&apos;ve built a platform that
+                                turns everyday spending into extraordinary rewards, helping businesses grow while
+                                celebrating their customers in meaningful ways.
+                            </p>
+                        </div>
+
+                        <!-- Right Column (Image) -->
+                        <img src="assets/about1.png"
+                            class="mt-10 lg:mt-0 lg:ml-[43px] w-full lg:w-[545px] h-auto lg:h-[678px] object-cover rounded-2xl"
+                            alt="About Us Image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What We Do Section -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-9 lg:py-16">
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+                <img src="assets/about2.png" class="w-full lg:w-[503px] h-auto lg:h-[493px] object-cover rounded-2xl" />
+                <div class="lg:w-[713px] space-y-4">
+                    <p
+                        class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-4xl font-bold leading-10 text-[#111111] grow-0 shrink-0 basis-auto m-0 p-0">
+                        What We Do</p>
+                    <div
+                        class="[font-family:Outfit,sans-serif] text-base font-normal text-left leading-[19px] opacity-[0.80] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                        <span> Tisas empowers:<br /><br /></span>
+                        <ul class="list-disc m-0 pl-[1.5em]">
+                            <li>Businesses: By providing tools to boost sales, reward customers, and stand out
+                                in a competitive market.</li>
+                            <li>Customers: By turning every purchase into an opportunity for instant cash, and
+                                exciting memorable prizes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission/Vision/Aim Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+                <div class="bg-[#3e4db8] p-6 rounded-[10px]">
+                    <div class="box-border flex justify-center items-center flex-col gap-3 grow-0 shrink-0 basis-auto">
+                        <img src="assets/about3.png"
+                            class="h-40 max-w-[initial] object-cover w-[167px] box-border block grow-0 shrink-0 basis-auto border-[none]" />
+                        <p
+                            class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-2xl font-bold text-center leading-[26.5px] text-[white] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            Our Mission</p>
+                        <p
+                            class="[font-family:Outfit,sans-serif] text-sm font-light text-center leading-[17px] text-[white] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            To transform how businesses engage with customers by offering a loyalty solution
+                            that is simple, rewarding, and impactful.</p>
+                    </div>
+                </div>
+                <div class="bg-[#3e9ab8] p-6 rounded-[10px]">
+                    <div class="box-border flex justify-start items-center flex-col gap-3 grow-0 shrink-0 basis-auto">
+                        <img src="assets/about4.png"
+                            class="h-40 max-w-[initial] object-cover w-[82px] box-border block grow-0 shrink-0 basis-auto border-[none]" />
+                        <p
+                            class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-2xl font-bold text-center leading-[26.5px] text-[white] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            Our Vision</p>
+                        <p
+                            class="[font-family:Outfit,sans-serif] text-sm font-light text-center leading-[17px] text-[white] w-[304px] grow-0 shrink-0 basis-auto box-border m-0 p-0">
+                            To be the leading sales and loyalty platform that bridges businesses and customers,
+                            fostering lasting connections and shared growth.</p>
+                    </div>
+                </div>
+                <div class="bg-[#8350df] p-6 rounded-[10px]">
+                    <div class="box-border flex justify-start items-center flex-col gap-3 grow-0 shrink-0 basis-auto">
+                        <img src="assets/about5.png"
+                            class="h-40 max-w-[initial] object-cover w-[195px] box-border block grow-0 shrink-0 basis-auto border-[none]" />
+                        <p
+                            class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-2xl font-bold text-center leading-[26.5px] text-[white] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            Our Aim</p>
+                        <p
+                            class="[font-family:Outfit,sans-serif] text-sm font-light text-center leading-[17px] text-[white] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            We aim to create a thriving ecosystem where merchants increase sales and customers
+                            feel<br />appreciated with cash rewards and unforgettable experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Story Section -->
+        <div class="bg-neutral-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex flex-col lg:flex-row items-center gap-6">
+                    <!-- Left Column (Text Content) -->
+                    <div class="lg:w-[713px] space-y-4">
+                        <!-- Heading -->
+                        <p
+                            class="font-['Plus_Jakarta_Sans'] text-3xl md:text-4xl font-bold leading-[36px] md:leading-10 text-[#111111]">
+                            Our Story
+                        </p>
+
+                        <!-- Description -->
+                        <p
+                            class="font-['Outfit'] text-base font-light leading-[19px] opacity-80 text-[#111111] w-full lg:w-[631px]">
+                             Tisas was born out of a desire to bridge the gap between businesses and customers. We
+                            envisioned a platform that unifies loyalty programs across industries, making it easier for
+                            businesses to grow and for customers to feel valued. Today,  Tisas is not just a loyalty
+                            platform—it&apos;s a movement that celebrates spending and fosters mutual growth.
+                        </p>
+                    </div>
+
+                    <!-- Right Column (Image) -->
+                    <img src="assets/about6.png"
+                        class="w-full lg:w-[503px] h-auto lg:h-[493px] object-cover rounded-[10px]"
+                        alt="Our Story Image" />
+                </div>
+            </div>
+        </div>
+        <!-- Why Choose Section -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+                <img src="assets/about7.png"
+                    class="w-full lg:w-[503px] h-auto lg:h-[493px] object-cover rounded-[10px]" />
+                <div class="lg:w-[713px] space-y-5">
+                    <div
+                        class="box-border flex justify-center items-start flex-col gap-4 self-stretch grow-0 shrink-0 basis-auto">
+                        <p
+                            class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-2xl font-bold leading-[26.5px] text-[#111111] grow-0 shrink-0 basis-auto m-0 p-0">
+                            For Businesses</p>
+                        <div
+                            class="[font-family:Outfit,sans-serif] text-base font-normal text-left leading-[19px] opacity-[0.80] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            <ul class="list-disc m-0 pl-[1.5em]">
+                                <li>Simple and cost-eﬀective loyalty solutions.</li>
+                                <li>Tools to drive repeat sales and attract new customers.</li>
+                                <li>Enhanced visibility and insights through analytics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="box-border flex justify-center items-start flex-col gap-4 self-stretch grow-0 shrink-0 basis-auto">
+                        <p
+                            class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-2xl font-bold leading-[26.5px] text-[#111111] grow-0 shrink-0 basis-auto m-0 p-0">
+                            For Customers</p>
+                        <div
+                            class="[font-family:Outfit,sans-serif] text-base font-normal text-left leading-[19px] opacity-[0.80] text-[#111111] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            <ul class="list-disc m-0 pl-[1.5em]">
+                                <li>Guaranteed instant cash on every token redeemed.</li>
+                                <li>Weekly and monthly prize draws with amazing rewards.</li>
+                                <li>A seamless and engaging reward experience.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Join Us Section -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-[#2e2b26] to-[#b78d3f] rounded-[20px] p-6 lg:p-0">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <img src="assets/about8.png" class="w-full lg:w-[344px] h-auto lg:h-[482px] object-cover" />
+                    <div class="lg:w-[628px] p-6 lg:p-[143px_15px_101px] space-y-5">
+                        <p
+                            class="[font-family:'Plus_Jakarta_Sans',sans-serif] text-4xl font-bold text-left leading-10 text-[white] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                            Join Us On This Journey</p>
+                        <div
+                            class="box-border flex justify-start items-start flex-col gap-6 self-stretch grow-0 shrink-0 basis-auto">
+                            <p
+                                class="[font-family:Outfit,sans-serif] text-2xl font-normal text-left leading-[26.5px] text-[#f1f1f1] self-stretch grow-0 shrink-0 basis-auto m-0 p-0">
+                                Whether you&apos;re a business looking to grow or a customer seeking more
+                                from your spending,  Tisas is here to make it happen. Together, let&apos;s
+                                create a world where every transaction brings value, joy, and connection.
+                            </p>
+                            <!-- Button Component is detected here -->
+                            <button
+                                class="bg-[#b78d3f] [font-family:General_Sans] text-base font-medium text-[white] cursor-pointer min-w-[270px] h-[50px] w-[270px] block box-border grow-0 shrink-0 basis-auto rounded-2xl border-[none]">Join
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-[#1e1e1e] w-full py-16">
+        <div class="max-w-[1234px] mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <img src="assets/logo.png" alt=" Tisas Logo" class="h-[54px] w-[153px]">
+                    <p class="text-sm text-neutral-50 leading-5">
+                         Tisas is an inclusive celebratory loyalty platform that helps businesses to build
+                        deeper and more meaningful connection with their customers.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-[#1977f3] transition-colors">
+                            <svg width="21" height="24" viewBox="0 0 21 24" fill="currentColor">
+                                <path
+                                    d="M3 1.5C1.34531 1.5 0 2.84531 0 4.5V19.5C0 21.1547 1.34531 22.5 3 22.5H18C19.6547 22.5 21 21.1547 21 19.5V4.5C21 2.84531 19.6547 1.5 18 1.5H3ZM16.9266 5.4375L12.0609 10.9969L17.7844 18.5625H13.3031L9.79688 13.9734L5.77969 18.5625H3.55313L8.75625 12.6141L3.26719 5.4375H7.86094L11.0344 9.63281L14.7 5.4375H16.9266ZM15.1547 17.2313L7.19062 6.69844H5.86406L13.9172 17.2313H15.15H15.1547Z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-[#1977f3] hover:text-white transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 24.002C18.6274 24.002 24 18.6294 24 12.002C24 5.37454 18.6274 0.00195312 12 0.00195312C5.37258 0.00195312 0 5.37454 0 12.002C0 18.6294 5.37258 24.002 12 24.002Z" />
+                                <path
+                                    d="M16.6712 15.4708L17.2028 12.0012H13.875V9.75008C13.875 8.80169 14.3391 7.87524 15.8308 7.87524H17.3445V4.92207C17.3445 4.92207 15.9709 4.6875 14.658 4.6875C11.9175 4.6875 10.1253 6.34803 10.1253 9.35688V12.0012H7.07764V15.4708H10.1253V23.8561C10.7362 23.9523 11.3623 24.0012 12.0002 24.0012C12.638 24.0012 13.2641 23.9506 13.875 23.8561V15.4708H16.6712Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-[#FFDD55] transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12.006 0.181641C7.07127 0.181641 5.62804 0.186732 5.34751 0.210004C4.33481 0.294186 3.70465 0.453641 3.01812 0.795459C2.48905 1.05819 2.07179 1.36273 1.65998 1.78964C0.910006 2.56819 0.455474 3.526 0.290934 4.66455C0.210936 5.21728 0.187664 5.33 0.182937 8.15328C0.181119 9.09437 0.182937 10.3329 0.182937 11.9942C0.182937 16.9251 0.188391 18.3669 0.212027 18.6469C0.293843 19.6324 0.448383 20.2524 0.775646 20.9306C1.40108 22.2287 2.59559 23.2033 4.00282 23.5669C4.49008 23.6924 5.02824 23.7615 5.71913 23.7942C6.01185 23.8069 8.9954 23.816 11.9808 23.816C14.9661 23.816 17.9515 23.8124 18.2369 23.7978C19.0369 23.7602 19.5014 23.6978 20.0151 23.5651C21.4314 23.1996 22.6041 22.2396 23.2422 20.9233C23.5631 20.2615 23.7259 19.6178 23.7995 18.6838C23.8155 18.4802 23.8222 15.2335 23.8222 11.9911C23.8222 8.74819 23.8149 5.50746 23.7989 5.30382C23.7244 4.35473 23.5617 3.71655 23.2304 3.042C22.9586 2.48982 22.6568 2.07746 22.2186 1.65582C21.4367 0.908913 20.4803 0.454368 19.3407 0.290004C18.7886 0.210186 18.6786 0.18655 15.8532 0.181641H12.006Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="space-y-4">
+                    <h3 class="text-base text-white/40">Useful links</h3>
+                    <nav class="space-y-2">
+                        <a href="about.html" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">About Us</a>
+                        <a href="contact.html" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Contact Us</a>
+                        <a href="#" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Terms & Condition</a>
+                        <a href="privacy-policy.html" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Privacy
+                            Policy</a>
+                    </nav>
+                </div>
+
+                <!-- Users -->
+                <div class="space-y-4">
+                    <h3 class="text-base text-white/40">Users</h3>
+                    <nav class="space-y-2">
+                        <a href="#" class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Merchants</a>
+                        <a href="customers.html"
+                            class="block text-sm text-neutral-50 hover:text-[#b78d3f]">Customers</a>
+                    </nav>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h3 class="text-base text-white/40">Contact</h3>
+                    <div class="space-y-2">
+                        <a href="mailto:support@btoken.com"
+                            class="block text-sm text-neutral-50 hover:text-[#b78d3f]">support@btoken.com</a>
+                        <p class="text-sm text-neutral-50">Lorem ipsum dolor sit amet consectetur. Id.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+    </div>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500" />
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <style>
+        /* Ensure the mobile menu doesn't overflow on small screens */
+        #mobile-menu {
+            max-height: calc(100vh - 6rem);
+            /* Adjust based on your header height */
+            overflow-y: auto;
+        }
+
+        /* Optional: Add smooth transitions for the mobile menu */
+        #mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #mobile-menu.hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+    </style>
+</body>
+
+</html>

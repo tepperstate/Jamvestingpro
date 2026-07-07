@@ -1,0 +1,39 @@
+<svg width="600" height="150" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+    <!-- Icon Group -->
+    <g transform="translate(20, 25)">
+        <!-- Solid Red Box -->
+        <rect x="0" y="0" width="100" height="100" rx="22" ry="22" fill="#e7858c" />
+        <rect x="0" y="0" width="100" height="100" rx="22" ry="22" fill="url(#grad)" />
+        <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff9a9e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#fecfef;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff3333;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#cc0000;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="100" height="100" rx="22" ry="22" fill="url(#redGrad)" />
+        
+        <!-- White Uptrend Chart -->
+        <!-- Main Line -->
+        <path d="M 22 65 L 45 42 L 58 55 L 78 32" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Arrow Head -->
+        <path d="M 60 32 L 78 32 L 78 50" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+    
+    <!-- Text Group -->
+    <g transform="translate(140, 95)" font-family="Arial, Helvetica, sans-serif" font-weight="bold">
+        <!-- Jam (Red) -->
+        <text x="0" y="0" font-size="65" fill="#ff3333" letter-spacing="-1">Jam</text>
+        
+        <!-- Vesting (White) -->
+        <text x="125" y="0" font-size="65" fill="#ffffff" letter-spacing="-1">Vesting</text>
+        
+        <!-- PRO (Red) -->
+        <text x="365" y="-10" font-size="35" fill="#ff3333" letter-spacing="4">PRO</text>
+        <!-- Red Underline for PRO -->
+        <rect x="365" y="5" width="85" height="4" fill="#ff3333" />
+    </g>
+</svg>

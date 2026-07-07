@@ -1,0 +1,398 @@
+/* ===================================================================
+   MOBILE OVERRIDE CSS
+   Applied to the desktop user layout (layouts/user/app) to make 
+   all pages responsive and app-like on mobile devices (<768px).
+   =================================================================== */
+
+/* ===== CORE MOBILE CONSTRAINTS ===== */
+@media (max-width: 768px) {
+
+    /* Prevent all horizontal overflow */
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+
+    /* Global Input Visibility Fix */
+    input, textarea, select, .form-control, .premium-input {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: rgba(255, 255, 255, 0.35) !important;
+    }
+
+    /* Force all containers to respect viewport */
+    .container, .container-fluid, .main-container, .content-area {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    /* Content area full width + tighter padding */
+    .content-area {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 10px 10px 100px 10px !important;
+    }
+
+    /* Header adjustments for mobile */
+    .glass-header {
+        margin: 6px !important;
+        width: calc(100% - 12px) !important;
+        padding: 0 10px !important;
+        height: 60px !important;
+        border-radius: 10px !important;
+    }
+
+    .main-container {
+        margin-top: 70px !important;
+    }
+
+    /* Hide balance badge text, keep icon */
+    .user-balance-badge .small {
+        display: none;
+    }
+
+    /* Profile dropdown tighter */
+    .profile-dropdown {
+        margin-left: 8px !important;
+    }
+
+    .profile-avatar {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    /* ===== TYPOGRAPHY - HANDLED BY FLUID DESIGN IN MYCSS.CSS ===== */
+
+    /* ===== PREMIUM CARD SYSTEM OVERRIDES ===== */
+    .glass-card-premium {
+        border-radius: 18px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .card-header-img-wrapper {
+        height: 100px !important; /* Fixed smaller height on mobile */
+    }
+
+    .card-body-premium {
+        padding: 0.85rem !important; /* Smaller consistent padding on mobile */
+    }
+
+    .glass-card, .glass-card-premium {
+        /* padding: 0 !important; Removed - causes massive text cutoff. Use .p-0 on cards with flush images */
+    }
+
+    /* Fixed Padding Reduction - Global Overrides */
+    .p-xs-2 { padding: 0.5rem !important; }
+    .p-xs-3 { padding: 0.75rem !important; }
+
+    /* Reduce container padding */
+    .py-4 { padding-top: 10px !important; padding-bottom: 10px !important; }
+    .py-5 { padding-top: 12px !important; padding-bottom: 12px !important; }
+    .p-5 { padding: 12px !important; }
+    .p-4 { padding: 10px !important; }
+    .mb-5 { margin-bottom: 20px !important; }
+    .mt-5 { margin-top: 20px !important; }
+    .pt-5 { padding-top: 20px !important; }
+
+    /* ===== MULTI-COLUMN STACKING ===== */
+    /* Profile: Sidebar + Content */
+    .col-xl-3, .col-xl-9,
+    .col-lg-7, .col-lg-5,
+    .col-lg-8, .col-lg-4,
+    .col-xl-10 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Row gaps tighter */
+    .row.g-4 { --bs-gutter-y: 16px !important; }
+    .row.g-5 { --bs-gutter-y: 16px !important; }
+
+    /* ===== PROFILE PAGE MOBILE ===== */
+    /* Make the profile sidebar horizontal on mobile */
+    .nav-premium-vertical {
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none;
+    }
+
+    .nav-premium-vertical::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-premium-vertical .nav-link {
+        white-space: nowrap !important;
+        padding: 8px 14px !important;
+        font-size: var(--font-size-xs) !important;
+        border-radius: 100px !important;
+    }
+
+    /* Profile avatar section smaller */
+    .avatar-box img {
+        width: 72px !important;
+        height: 72px !important;
+    }
+
+    /* Profile sidebar card padding */
+    .col-xl-3 .glass-card {
+        padding: 20px !important;
+    }
+
+    /* Hide the upgrade section on mobile profile sidebar */
+    .col-xl-3 .border-top.border-dark {
+        display: none !important;
+    }
+
+    /* ===== DEPOSIT PAGE MOBILE ===== */
+    /* Method cards grid */
+    .col-6.col-md-4 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .method-card {
+        padding: 12px !important;
+    }
+
+    .method-icon {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.25rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Step indicators */
+    .step-num {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .step-label {
+        font-size: 0.6rem !important;
+    }
+
+    .step-line {
+        max-width: 40px !important;
+    }
+
+    /* QR code container */
+    .qr-container {
+        padding: 8px !important;
+    }
+
+    #qr-mount {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    /* Address box word break */
+    .address-box code {
+        font-size: 0.7rem !important;
+        word-break: break-all !important;
+    }
+
+    /* ===== WITHDRAW PAGE MOBILE ===== */
+    .nav-premium {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+    }
+
+    .nav-premium .nav-link {
+        white-space: nowrap !important;
+        padding: 8px 14px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Input groups */
+    .input-group .input-group-text {
+        padding: 8px 12px !important;
+    }
+
+    .premium-input {
+        font-size: 0.95rem !important;
+    }
+
+    /* ===== TABLES MOBILE ===== */
+    .table-responsive {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .table th, .table td {
+        font-size: var(--font-size-xs) !important;
+        padding: 8px 6px !important;
+        white-space: nowrap !important;
+    }
+
+    /* ===== MODALS MOBILE ===== */
+    .modal-dialog {
+        margin: 8px !important;
+        max-width: calc(100vw - 16px) !important;
+    }
+
+    .modal-content {
+        border-radius: 20px !important;
+        padding: 16px !important;
+    }
+
+    .modal-content .glass-card {
+        padding: 14px !important;
+    }
+
+    /* ===== BUTTONS - TOUCH-FRIENDLY ===== */
+    .btn {
+        min-height: 44px;
+        font-size: 0.85rem;
+    }
+
+    .btn-premium {
+        padding: 12px 20px !important;
+        border-radius: 14px !important;
+    }
+
+    .btn-lg {
+        padding: 14px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* ===== IMAGES ===== */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* ===== FORMS ===== */
+    .form-control, .form-select, .premium-input {
+        padding: 12px 14px !important;
+        font-size: 0.9rem !important;
+        border-radius: 12px !important;
+    }
+
+    label.small {
+        font-size: 0.75rem !important;
+    }
+
+    /* ===== PROGRESS BARS ===== */
+    .progress {
+        border-radius: 8px !important;
+    }
+
+    /* ===== BADGES ===== */
+    .badge {
+        font-size: 0.6rem !important;
+    }
+
+    /* ===== BOTTOM NAV SAFE AREA ===== */
+    /* Ensure content doesn't get hidden behind the bottom nav */
+    .no-cutoff,
+    .mobile-safe-container {
+        padding-bottom: 100px !important;
+    }
+
+    /* ===== SIDEBAR MOBILE REFINEMENT ===== */
+    .sidebar {
+        width: 280px !important;
+        max-width: 85% !important;
+        margin: 0 !important;
+        height: 100vh !important;
+        border-radius: 0 24px 24px 0 !important;
+        box-shadow: 20px 0 50px rgba(0,0,0,0.5) !important;
+        left: 0 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0) !important;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sidebar-header {
+        background: rgba(10, 15, 30, 0.4);
+    }
+    
+    .letter-spacing-1 {
+        letter-spacing: 1px;
+    }
+
+    /* ===== PRELOADER MOBILE ===== */
+    .preloader .loader-pulse {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* ===== UPGRADE BUTTON ===== */
+    .upgrade-btn-premium {
+        padding: 8px 14px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* ===== HIDE DESKTOP-ONLY ELEMENTS ===== */
+    .d-none-mobile { display: none !important; }
+
+    /* ===== SMOOTH SCROLL + TOUCH ===== */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ===== TABLET ADJUSTMENTS (768px - 1024px) ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content-area {
+        padding: 1rem 1.5rem 60px 1.5rem !important;
+    }
+
+    .glass-card.p-5 {
+        padding: 24px !important;
+    }
+
+    h1, .h1 { font-size: 1.75rem !important; }
+    h2, .h2 { font-size: 1.4rem !important; }
+
+    .col-xl-3 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .nav-premium-vertical {
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-premium-vertical .nav-link {
+        white-space: nowrap !important;
+    }
+}
+
+/* ===== DESKTOP-ONLY VISIBILITY FIXES ===== */
+@media (min-width: 992px) {
+    .bottom-nav {
+        display: none !important;
+    }
+}

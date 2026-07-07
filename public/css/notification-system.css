@@ -1,0 +1,295 @@
+/* 
+ * JamVesting Pro - Modern Notification System (Toasts)
+ * Premium, glassmorphic, stacking notifications
+ */
+
+:root {
+    --noti-bg: #09090b;
+    --noti-text: #f8fafc;
+    --noti-text-muted: #a1a1aa;
+    --noti-border: rgba(255, 255, 255, 0.08);
+    
+    --noti-success: #10b981;
+    --noti-error: #ef4444;
+    --noti-warning: #f59e0b;
+    --noti-info: #3b82f6;
+    --noti-loading: #a78bfa;
+    --noti-trade-buy: #10b981;
+    --noti-trade-sell: #ef4444;
+    --noti-achievement: #fbbf24;
+}
+
+#modern-notification-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+    width: 100%;
+    max-width: 400px;
+}
+
+@media (max-width: 576px) {
+    #modern-notification-container {
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        align-items: center;
+        width: calc(100% - 32px);
+    }
+    
+    .modern-noti-card {
+        width: 100%;
+    }
+}
+
+.modern-noti-card {
+    pointer-events: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--noti-bg);
+    background: linear-gradient(145deg, rgba(13, 13, 18, 0.95), rgba(9, 9, 11, 0.98));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--noti-border);
+    border-radius: 12px;
+    padding: 14px 18px 17px; /* extra bottom padding for progress bar */
+    width: 100%;
+    min-width: 320px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 
+                0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transform-origin: top right;
+    animation: noti-enter 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform, opacity;
+}
+
+/* Left Accent Bar */
+.modern-noti-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--noti-accent);
+}
+
+.modern-noti-success { --noti-accent: var(--noti-success); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(16, 185, 129, 0.05); }
+.modern-noti-error { --noti-accent: var(--noti-error); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(239, 68, 68, 0.05); }
+.modern-noti-warning { --noti-accent: var(--noti-warning); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(245, 158, 11, 0.05); }
+.modern-noti-info { --noti-accent: var(--noti-info); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.05); }
+.modern-noti-loading { --noti-accent: var(--noti-loading); }
+.modern-noti-trade-buy { --noti-accent: var(--noti-trade-buy); }
+.modern-noti-trade-sell { --noti-accent: var(--noti-trade-sell); }
+
+/* Achievement Variant */
+.modern-noti-achievement {
+    --noti-accent: var(--noti-achievement);
+    border-color: rgba(251, 191, 36, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 
+                0 20px 60px rgba(0, 0, 0, 0.5), 
+                0 0 40px rgba(251, 191, 36, 0.15);
+}
+
+.modern-noti-achievement::before {
+    background: linear-gradient(to bottom, #d4af37, #f59e0b);
+}
+
+/* Entrance/Exit */
+@keyframes noti-enter {
+    0% { transform: translateX(100%) scale(0.85); opacity: 0; }
+    60% { transform: translateX(-5px) scale(1.03); opacity: 1; }
+    80% { transform: translateX(2px) scale(0.98); }
+    100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+.modern-noti-exit {
+    animation: noti-exit 0.25s ease-out forwards;
+}
+
+@keyframes noti-exit {
+    0% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); }
+    100% { transform: scale(0.95) translateY(-10px); opacity: 0; filter: blur(2px); }
+}
+
+/* Hover Effects */
+.modern-noti-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+.modern-noti-card:hover .noti-progress-fill {
+    animation-play-state: paused;
+}
+.modern-noti-card:hover .noti-close {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Icon Area */
+.noti-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--noti-accent);
+    filter: drop-shadow(0 0 8px var(--noti-accent));
+    margin-top: 2px;
+}
+
+/* Content Area */
+.noti-content {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.noti-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--noti-text);
+    line-height: 1.3;
+}
+
+.noti-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--noti-text-muted);
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* Close Button */
+.noti-close {
+    background: transparent;
+    border: none;
+    color: var(--noti-text-muted);
+    font-size: 18px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.noti-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+}
+
+/* Progress Bar */
+.noti-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.noti-progress-fill {
+    height: 100%;
+    background: var(--noti-accent);
+    width: 100%;
+    transform-origin: left;
+    animation: noti-progress-anim linear forwards;
+}
+
+@keyframes noti-progress-anim {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Specific Animations */
+.noti-shake {
+    animation: noti-shake-anim 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes noti-shake-anim {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.noti-icon-draw path,
+.noti-icon-draw polyline,
+.noti-icon-draw circle {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: noti-draw 0.6s ease-out forwards;
+    animation-delay: 0.1s;
+}
+@keyframes noti-draw {
+    to { stroke-dashoffset: 0; }
+}
+
+.noti-icon-spin {
+    animation: noti-spin 1s linear infinite;
+}
+@keyframes noti-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.noti-warning .noti-icon svg {
+    animation: noti-pulse-amber 2s infinite ease-in-out;
+}
+@keyframes noti-pulse-amber {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(245,158,11,0.5)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 16px rgba(245,158,11,0.8)); transform: scale(1.1); }
+}
+
+.modern-noti-achievement .noti-icon svg {
+    animation: achieve-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform-origin: center;
+}
+@keyframes achieve-pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.8)); }
+    50% { transform: scale(1.2) rotate(5deg); filter: drop-shadow(0 0 16px rgba(251, 191, 36, 1)); }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .modern-noti-card {
+        animation: noti-fade-enter 0.2s ease-out forwards;
+        transition: opacity 0.2s ease;
+    }
+    .modern-noti-exit {
+        animation: noti-fade-exit 0.2s ease-out forwards;
+    }
+    @keyframes noti-fade-enter {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes noti-fade-exit {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+    .noti-shake, .noti-icon-draw path, .noti-icon-draw polyline, .noti-icon-draw circle, .noti-icon-spin, .noti-warning .noti-icon svg, .modern-noti-achievement .noti-icon svg {
+        animation: none;
+        stroke-dashoffset: 0;
+        filter: none;
+        transform: none;
+    }
+}
